@@ -1,3 +1,1327 @@
-[gd_scene format=3 uid="uid://b7qfd2hqipvmw"]
+[gd_scene load_steps=2 format=3 uid="uid://b7qfd2hqipvmw"]
 
-[node name="Dashboard" type="Node2D" unique_id=1617273650]
+[ext_resource type="Script" path="res://dashboard.gd" id="1_script"]
+
+[node name="Dashboard" type="Control" unique_id=1617273650]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="Layout" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 16
+
+[node name="Header" type="HBoxContainer" parent="MarginContainer/Layout"]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="TitleBox" type="VBoxContainer" parent="MarginContainer/Layout/Header"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Title" type="Label" parent="MarginContainer/Layout/Header/TitleBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Dashboard"
+
+[node name="Hint" type="Label" parent="MarginContainer/Layout/Header/TitleBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.62, 0.66, 0.7, 1)
+theme_override_font_sizes/font_size = 14
+text = "Summary placeholders. Not saved. Changing the period does not load records."
+
+[node name="HeaderSpacer" type="Control" parent="MarginContainer/Layout/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="YearLabel" type="Label" parent="MarginContainer/Layout/Header"]
+layout_mode = 2
+text = "Year"
+
+[node name="YearOption" type="OptionButton" parent="MarginContainer/Layout/Header"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+selected = 0
+item_count = 5
+popup/item_0/text = "2026"
+popup/item_0/id = 0
+popup/item_1/text = "2027"
+popup/item_1/id = 1
+popup/item_2/text = "2028"
+popup/item_2/id = 2
+popup/item_3/text = "2029"
+popup/item_3/id = 3
+popup/item_4/text = "2030"
+popup/item_4/id = 4
+
+[node name="MonthLabel" type="Label" parent="MarginContainer/Layout/Header"]
+layout_mode = 2
+text = "Month"
+
+[node name="MonthOption" type="OptionButton" parent="MarginContainer/Layout/Header"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+selected = 0
+item_count = 12
+popup/item_0/text = "January"
+popup/item_0/id = 0
+popup/item_1/text = "February"
+popup/item_1/id = 1
+popup/item_2/text = "March"
+popup/item_2/id = 2
+popup/item_3/text = "April"
+popup/item_3/id = 3
+popup/item_4/text = "May"
+popup/item_4/id = 4
+popup/item_5/text = "June"
+popup/item_5/id = 5
+popup/item_6/text = "July"
+popup/item_6/id = 6
+popup/item_7/text = "August"
+popup/item_7/id = 7
+popup/item_8/text = "September"
+popup/item_8/id = 8
+popup/item_9/text = "October"
+popup/item_9/id = 9
+popup/item_10/text = "November"
+popup/item_10/id = 10
+popup/item_11/text = "December"
+popup/item_11/id = 11
+
+[node name="TableScroll" type="ScrollContainer" parent="MarginContainer/Layout"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+follow_focus = true
+horizontal_scroll_mode = 1
+vertical_scroll_mode = 1
+
+[node name="Sections" type="VBoxContainer" parent="MarginContainer/Layout/TableScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+
+[node name="OverviewRow" type="HBoxContainer" parent="MarginContainer/Layout/TableScroll/Sections"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 0
+
+[node name="OverviewPanel" type="PanelContainer" parent="MarginContainer/Layout/TableScroll/Sections/OverviewRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="OverviewMargin" type="MarginContainer" parent="MarginContainer/Layout/TableScroll/Sections/OverviewRow/OverviewPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="OverviewBox" type="VBoxContainer" parent="MarginContainer/Layout/TableScroll/Sections/OverviewRow/OverviewPanel/OverviewMargin"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/OverviewRow/OverviewPanel/OverviewMargin/OverviewBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Financial Overview"
+horizontal_alignment = 1
+
+[node name="OverviewTable" type="GridContainer" parent="MarginContainer/Layout/TableScroll/Sections/OverviewRow/OverviewPanel/OverviewMargin/OverviewBox"]
+layout_mode = 2
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 6
+columns = 4
+
+[node name="MetricHeader" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/OverviewRow/OverviewPanel/OverviewMargin/OverviewBox/OverviewTable"]
+custom_minimum_size = Vector2(280, 31)
+layout_mode = 2
+text = "Metric"
+vertical_alignment = 1
+
+[node name="LatestHeader" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/OverviewRow/OverviewPanel/OverviewMargin/OverviewBox/OverviewTable"]
+custom_minimum_size = Vector2(140, 31)
+layout_mode = 2
+text = "Latest"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="PreviousHeader" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/OverviewRow/OverviewPanel/OverviewMargin/OverviewBox/OverviewTable"]
+custom_minimum_size = Vector2(170, 31)
+layout_mode = 2
+text = "Previous Month"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="GrowthHeader" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/OverviewRow/OverviewPanel/OverviewMargin/OverviewBox/OverviewTable"]
+custom_minimum_size = Vector2(120, 31)
+layout_mode = 2
+text = "Growth"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="NetChecking" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/OverviewRow/OverviewPanel/OverviewMargin/OverviewBox/OverviewTable"]
+custom_minimum_size = Vector2(280, 31)
+layout_mode = 2
+text = "Net Checking Balance"
+vertical_alignment = 1
+
+[node name="NetCheckingLatest" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/OverviewRow/OverviewPanel/OverviewMargin/OverviewBox/OverviewTable"]
+custom_minimum_size = Vector2(140, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="NetCheckingPrevious" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/OverviewRow/OverviewPanel/OverviewMargin/OverviewBox/OverviewTable"]
+custom_minimum_size = Vector2(170, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="NetCheckingGrowth" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/OverviewRow/OverviewPanel/OverviewMargin/OverviewBox/OverviewTable"]
+custom_minimum_size = Vector2(120, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TotalIncome" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/OverviewRow/OverviewPanel/OverviewMargin/OverviewBox/OverviewTable"]
+custom_minimum_size = Vector2(280, 31)
+layout_mode = 2
+text = "Total Income"
+vertical_alignment = 1
+
+[node name="TotalIncomeLatest" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/OverviewRow/OverviewPanel/OverviewMargin/OverviewBox/OverviewTable"]
+custom_minimum_size = Vector2(140, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TotalIncomePrevious" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/OverviewRow/OverviewPanel/OverviewMargin/OverviewBox/OverviewTable"]
+custom_minimum_size = Vector2(170, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TotalIncomeGrowth" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/OverviewRow/OverviewPanel/OverviewMargin/OverviewBox/OverviewTable"]
+custom_minimum_size = Vector2(120, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TotalRetirement" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/OverviewRow/OverviewPanel/OverviewMargin/OverviewBox/OverviewTable"]
+custom_minimum_size = Vector2(280, 31)
+layout_mode = 2
+text = "Total Retirement"
+vertical_alignment = 1
+
+[node name="TotalRetirementLatest" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/OverviewRow/OverviewPanel/OverviewMargin/OverviewBox/OverviewTable"]
+custom_minimum_size = Vector2(140, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TotalRetirementPrevious" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/OverviewRow/OverviewPanel/OverviewMargin/OverviewBox/OverviewTable"]
+custom_minimum_size = Vector2(170, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TotalRetirementGrowth" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/OverviewRow/OverviewPanel/OverviewMargin/OverviewBox/OverviewTable"]
+custom_minimum_size = Vector2(120, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LiquidSavings" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/OverviewRow/OverviewPanel/OverviewMargin/OverviewBox/OverviewTable"]
+custom_minimum_size = Vector2(280, 31)
+layout_mode = 2
+text = "Total Liquid Savings"
+vertical_alignment = 1
+
+[node name="LiquidSavingsLatest" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/OverviewRow/OverviewPanel/OverviewMargin/OverviewBox/OverviewTable"]
+custom_minimum_size = Vector2(140, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LiquidSavingsPrevious" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/OverviewRow/OverviewPanel/OverviewMargin/OverviewBox/OverviewTable"]
+custom_minimum_size = Vector2(170, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LiquidSavingsGrowth" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/OverviewRow/OverviewPanel/OverviewMargin/OverviewBox/OverviewTable"]
+custom_minimum_size = Vector2(120, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="NetCash" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/OverviewRow/OverviewPanel/OverviewMargin/OverviewBox/OverviewTable"]
+custom_minimum_size = Vector2(280, 31)
+layout_mode = 2
+text = "Total Net Cash"
+vertical_alignment = 1
+
+[node name="NetCashLatest" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/OverviewRow/OverviewPanel/OverviewMargin/OverviewBox/OverviewTable"]
+custom_minimum_size = Vector2(140, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="NetCashPrevious" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/OverviewRow/OverviewPanel/OverviewMargin/OverviewBox/OverviewTable"]
+custom_minimum_size = Vector2(170, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="NetCashGrowth" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/OverviewRow/OverviewPanel/OverviewMargin/OverviewBox/OverviewTable"]
+custom_minimum_size = Vector2(120, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="NetWorth" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/OverviewRow/OverviewPanel/OverviewMargin/OverviewBox/OverviewTable"]
+custom_minimum_size = Vector2(280, 31)
+layout_mode = 2
+text = "Net Worth"
+vertical_alignment = 1
+
+[node name="NetWorthLatest" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/OverviewRow/OverviewPanel/OverviewMargin/OverviewBox/OverviewTable"]
+custom_minimum_size = Vector2(140, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="NetWorthPrevious" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/OverviewRow/OverviewPanel/OverviewMargin/OverviewBox/OverviewTable"]
+custom_minimum_size = Vector2(170, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="NetWorthGrowth" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/OverviewRow/OverviewPanel/OverviewMargin/OverviewBox/OverviewTable"]
+custom_minimum_size = Vector2(120, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="NetWorthChart" type="PanelContainer" parent="MarginContainer/Layout/TableScroll/Sections/OverviewRow"]
+custom_minimum_size = Vector2(420, 280)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Margin" type="MarginContainer" parent="MarginContainer/Layout/TableScroll/Sections/OverviewRow/NetWorthChart"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Box" type="VBoxContainer" parent="MarginContainer/Layout/TableScroll/Sections/OverviewRow/NetWorthChart/Margin"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/OverviewRow/NetWorthChart/Margin/Box"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Net Worth History"
+horizontal_alignment = 1
+
+[node name="Body" type="CenterContainer" parent="MarginContainer/Layout/TableScroll/Sections/OverviewRow/NetWorthChart/Margin/Box"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_minimum_size = Vector2(0, 200)
+
+[node name="Empty" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/OverviewRow/NetWorthChart/Margin/Box/Body"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.62, 0.66, 0.7, 1)
+text = "No net worth history yet."
+horizontal_alignment = 1
+
+[node name="MonthlyPanel" type="PanelContainer" parent="MarginContainer/Layout/TableScroll/Sections"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MonthlyMargin" type="MarginContainer" parent="MarginContainer/Layout/TableScroll/Sections/MonthlyPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="MonthlyBox" type="VBoxContainer" parent="MarginContainer/Layout/TableScroll/Sections/MonthlyPanel/MonthlyMargin"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/MonthlyPanel/MonthlyMargin/MonthlyBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "This Month's Budget"
+horizontal_alignment = 1
+
+[node name="MonthlyPeriod" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/MonthlyPanel/MonthlyMargin/MonthlyBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.62, 0.66, 0.7, 1)
+text = "January 2026"
+horizontal_alignment = 1
+
+[node name="MonthlyBody" type="HBoxContainer" parent="MarginContainer/Layout/TableScroll/Sections/MonthlyPanel/MonthlyMargin/MonthlyBox"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="MonthlyTableBox" type="VBoxContainer" parent="MarginContainer/Layout/TableScroll/Sections/MonthlyPanel/MonthlyMargin/MonthlyBox/MonthlyBody"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="MonthlyHeader" type="HBoxContainer" parent="MarginContainer/Layout/TableScroll/Sections/MonthlyPanel/MonthlyMargin/MonthlyBox/MonthlyBody/MonthlyTableBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="CategoryHeader" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/MonthlyPanel/MonthlyMargin/MonthlyBox/MonthlyBody/MonthlyTableBox/MonthlyHeader"]
+custom_minimum_size = Vector2(280, 31)
+layout_mode = 2
+text = "Budget Category"
+vertical_alignment = 1
+
+[node name="BudgetedHeader" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/MonthlyPanel/MonthlyMargin/MonthlyBox/MonthlyBody/MonthlyTableBox/MonthlyHeader"]
+custom_minimum_size = Vector2(120, 31)
+layout_mode = 2
+text = "Budgeted"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SpentHeader" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/MonthlyPanel/MonthlyMargin/MonthlyBox/MonthlyBody/MonthlyTableBox/MonthlyHeader"]
+custom_minimum_size = Vector2(120, 31)
+layout_mode = 2
+text = "Spent"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="RemainingHeader" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/MonthlyPanel/MonthlyMargin/MonthlyBox/MonthlyBody/MonthlyTableBox/MonthlyHeader"]
+custom_minimum_size = Vector2(130, 31)
+layout_mode = 2
+text = "Remaining"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="CutHeader" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/MonthlyPanel/MonthlyMargin/MonthlyBox/MonthlyBody/MonthlyTableBox/MonthlyHeader"]
+custom_minimum_size = Vector2(150, 31)
+layout_mode = 2
+text = "Cut Remaining"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="MonthlyEmpty" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/MonthlyPanel/MonthlyMargin/MonthlyBox/MonthlyBody/MonthlyTableBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.62, 0.66, 0.7, 1)
+text = "No budget categories yet."
+horizontal_alignment = 1
+
+[node name="MonthlyRows" type="VBoxContainer" parent="MarginContainer/Layout/TableScroll/Sections/MonthlyPanel/MonthlyMargin/MonthlyBox/MonthlyBody/MonthlyTableBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="MonthlyTotal" type="HBoxContainer" parent="MarginContainer/Layout/TableScroll/Sections/MonthlyPanel/MonthlyMargin/MonthlyBox/MonthlyBody/MonthlyTableBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Caption" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/MonthlyPanel/MonthlyMargin/MonthlyBox/MonthlyBody/MonthlyTableBox/MonthlyTotal"]
+custom_minimum_size = Vector2(280, 31)
+layout_mode = 2
+text = "Total"
+vertical_alignment = 1
+
+[node name="Budgeted" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/MonthlyPanel/MonthlyMargin/MonthlyBox/MonthlyBody/MonthlyTableBox/MonthlyTotal"]
+custom_minimum_size = Vector2(120, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Spent" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/MonthlyPanel/MonthlyMargin/MonthlyBox/MonthlyBody/MonthlyTableBox/MonthlyTotal"]
+custom_minimum_size = Vector2(120, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Remaining" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/MonthlyPanel/MonthlyMargin/MonthlyBox/MonthlyBody/MonthlyTableBox/MonthlyTotal"]
+custom_minimum_size = Vector2(130, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Cut" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/MonthlyPanel/MonthlyMargin/MonthlyBox/MonthlyBody/MonthlyTableBox/MonthlyTotal"]
+custom_minimum_size = Vector2(150, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="MonthlyOverspent" type="HBoxContainer" parent="MarginContainer/Layout/TableScroll/Sections/MonthlyPanel/MonthlyMargin/MonthlyBox/MonthlyBody/MonthlyTableBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Caption" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/MonthlyPanel/MonthlyMargin/MonthlyBox/MonthlyBody/MonthlyTableBox/MonthlyOverspent"]
+custom_minimum_size = Vector2(280, 31)
+layout_mode = 2
+text = "Total Overspent"
+vertical_alignment = 1
+
+[node name="Budgeted" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/MonthlyPanel/MonthlyMargin/MonthlyBox/MonthlyBody/MonthlyTableBox/MonthlyOverspent"]
+custom_minimum_size = Vector2(120, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Spent" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/MonthlyPanel/MonthlyMargin/MonthlyBox/MonthlyBody/MonthlyTableBox/MonthlyOverspent"]
+custom_minimum_size = Vector2(120, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Remaining" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/MonthlyPanel/MonthlyMargin/MonthlyBox/MonthlyBody/MonthlyTableBox/MonthlyOverspent"]
+custom_minimum_size = Vector2(130, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Cut" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/MonthlyPanel/MonthlyMargin/MonthlyBox/MonthlyBody/MonthlyTableBox/MonthlyOverspent"]
+custom_minimum_size = Vector2(150, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="MonthlyChart" type="PanelContainer" parent="MarginContainer/Layout/TableScroll/Sections/MonthlyPanel/MonthlyMargin/MonthlyBox/MonthlyBody"]
+custom_minimum_size = Vector2(420, 240)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Margin" type="MarginContainer" parent="MarginContainer/Layout/TableScroll/Sections/MonthlyPanel/MonthlyMargin/MonthlyBox/MonthlyBody/MonthlyChart"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Box" type="VBoxContainer" parent="MarginContainer/Layout/TableScroll/Sections/MonthlyPanel/MonthlyMargin/MonthlyBox/MonthlyBody/MonthlyChart/Margin"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/MonthlyPanel/MonthlyMargin/MonthlyBox/MonthlyBody/MonthlyChart/Margin/Box"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Spent vs Budget"
+horizontal_alignment = 1
+
+[node name="Body" type="CenterContainer" parent="MarginContainer/Layout/TableScroll/Sections/MonthlyPanel/MonthlyMargin/MonthlyBox/MonthlyBody/MonthlyChart/Margin/Box"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_minimum_size = Vector2(0, 160)
+
+[node name="Empty" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/MonthlyPanel/MonthlyMargin/MonthlyBox/MonthlyBody/MonthlyChart/Margin/Box/Body"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.62, 0.66, 0.7, 1)
+text = "No spending to compare yet."
+horizontal_alignment = 1
+
+[node name="AnnualPanel" type="PanelContainer" parent="MarginContainer/Layout/TableScroll/Sections"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AnnualMargin" type="MarginContainer" parent="MarginContainer/Layout/TableScroll/Sections/AnnualPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="AnnualBox" type="VBoxContainer" parent="MarginContainer/Layout/TableScroll/Sections/AnnualPanel/AnnualMargin"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AnnualPanel/AnnualMargin/AnnualBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Annual Budget"
+horizontal_alignment = 1
+
+[node name="AnnualPeriod" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AnnualPanel/AnnualMargin/AnnualBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.62, 0.66, 0.7, 1)
+text = "2026"
+horizontal_alignment = 1
+
+[node name="AnnualBody" type="HBoxContainer" parent="MarginContainer/Layout/TableScroll/Sections/AnnualPanel/AnnualMargin/AnnualBox"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="AnnualTableBox" type="VBoxContainer" parent="MarginContainer/Layout/TableScroll/Sections/AnnualPanel/AnnualMargin/AnnualBox/AnnualBody"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="AnnualHeader" type="HBoxContainer" parent="MarginContainer/Layout/TableScroll/Sections/AnnualPanel/AnnualMargin/AnnualBox/AnnualBody/AnnualTableBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="CategoryHeader" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AnnualPanel/AnnualMargin/AnnualBox/AnnualBody/AnnualTableBox/AnnualHeader"]
+custom_minimum_size = Vector2(280, 31)
+layout_mode = 2
+text = "Budget Category"
+vertical_alignment = 1
+
+[node name="BudgetedHeader" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AnnualPanel/AnnualMargin/AnnualBox/AnnualBody/AnnualTableBox/AnnualHeader"]
+custom_minimum_size = Vector2(120, 31)
+layout_mode = 2
+text = "Budgeted"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SpentHeader" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AnnualPanel/AnnualMargin/AnnualBox/AnnualBody/AnnualTableBox/AnnualHeader"]
+custom_minimum_size = Vector2(120, 31)
+layout_mode = 2
+text = "Spent"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="RemainingHeader" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AnnualPanel/AnnualMargin/AnnualBox/AnnualBody/AnnualTableBox/AnnualHeader"]
+custom_minimum_size = Vector2(130, 31)
+layout_mode = 2
+text = "Remaining"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="CutHeader" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AnnualPanel/AnnualMargin/AnnualBox/AnnualBody/AnnualTableBox/AnnualHeader"]
+custom_minimum_size = Vector2(150, 31)
+layout_mode = 2
+text = "Cut Remaining"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="AnnualEmpty" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AnnualPanel/AnnualMargin/AnnualBox/AnnualBody/AnnualTableBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.62, 0.66, 0.7, 1)
+text = "No budget categories yet."
+horizontal_alignment = 1
+
+[node name="AnnualRows" type="VBoxContainer" parent="MarginContainer/Layout/TableScroll/Sections/AnnualPanel/AnnualMargin/AnnualBox/AnnualBody/AnnualTableBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="AnnualTotal" type="HBoxContainer" parent="MarginContainer/Layout/TableScroll/Sections/AnnualPanel/AnnualMargin/AnnualBox/AnnualBody/AnnualTableBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Caption" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AnnualPanel/AnnualMargin/AnnualBox/AnnualBody/AnnualTableBox/AnnualTotal"]
+custom_minimum_size = Vector2(280, 31)
+layout_mode = 2
+text = "Total"
+vertical_alignment = 1
+
+[node name="Budgeted" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AnnualPanel/AnnualMargin/AnnualBox/AnnualBody/AnnualTableBox/AnnualTotal"]
+custom_minimum_size = Vector2(120, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Spent" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AnnualPanel/AnnualMargin/AnnualBox/AnnualBody/AnnualTableBox/AnnualTotal"]
+custom_minimum_size = Vector2(120, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Remaining" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AnnualPanel/AnnualMargin/AnnualBox/AnnualBody/AnnualTableBox/AnnualTotal"]
+custom_minimum_size = Vector2(130, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Cut" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AnnualPanel/AnnualMargin/AnnualBox/AnnualBody/AnnualTableBox/AnnualTotal"]
+custom_minimum_size = Vector2(150, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="AnnualOverspent" type="HBoxContainer" parent="MarginContainer/Layout/TableScroll/Sections/AnnualPanel/AnnualMargin/AnnualBox/AnnualBody/AnnualTableBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Caption" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AnnualPanel/AnnualMargin/AnnualBox/AnnualBody/AnnualTableBox/AnnualOverspent"]
+custom_minimum_size = Vector2(280, 31)
+layout_mode = 2
+text = "Total Overspent"
+vertical_alignment = 1
+
+[node name="Budgeted" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AnnualPanel/AnnualMargin/AnnualBox/AnnualBody/AnnualTableBox/AnnualOverspent"]
+custom_minimum_size = Vector2(120, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Spent" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AnnualPanel/AnnualMargin/AnnualBox/AnnualBody/AnnualTableBox/AnnualOverspent"]
+custom_minimum_size = Vector2(120, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Remaining" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AnnualPanel/AnnualMargin/AnnualBox/AnnualBody/AnnualTableBox/AnnualOverspent"]
+custom_minimum_size = Vector2(130, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Cut" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AnnualPanel/AnnualMargin/AnnualBox/AnnualBody/AnnualTableBox/AnnualOverspent"]
+custom_minimum_size = Vector2(150, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="AnnualChart" type="PanelContainer" parent="MarginContainer/Layout/TableScroll/Sections/AnnualPanel/AnnualMargin/AnnualBox/AnnualBody"]
+custom_minimum_size = Vector2(420, 240)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Margin" type="MarginContainer" parent="MarginContainer/Layout/TableScroll/Sections/AnnualPanel/AnnualMargin/AnnualBox/AnnualBody/AnnualChart"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Box" type="VBoxContainer" parent="MarginContainer/Layout/TableScroll/Sections/AnnualPanel/AnnualMargin/AnnualBox/AnnualBody/AnnualChart/Margin"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AnnualPanel/AnnualMargin/AnnualBox/AnnualBody/AnnualChart/Margin/Box"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Spent vs Annual Budget"
+horizontal_alignment = 1
+
+[node name="Body" type="CenterContainer" parent="MarginContainer/Layout/TableScroll/Sections/AnnualPanel/AnnualMargin/AnnualBox/AnnualBody/AnnualChart/Margin/Box"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_minimum_size = Vector2(0, 160)
+
+[node name="Empty" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AnnualPanel/AnnualMargin/AnnualBox/AnnualBody/AnnualChart/Margin/Box/Body"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.62, 0.66, 0.7, 1)
+text = "No annual spending to compare yet."
+horizontal_alignment = 1
+
+[node name="HistoryPanel" type="PanelContainer" parent="MarginContainer/Layout/TableScroll/Sections"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HistoryMargin" type="MarginContainer" parent="MarginContainer/Layout/TableScroll/Sections/HistoryPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="HistoryBox" type="VBoxContainer" parent="MarginContainer/Layout/TableScroll/Sections/HistoryPanel/HistoryMargin"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/HistoryPanel/HistoryMargin/HistoryBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Spending History"
+horizontal_alignment = 1
+
+[node name="SelectorRow" type="HBoxContainer" parent="MarginContainer/Layout/TableScroll/Sections/HistoryPanel/HistoryMargin/HistoryBox"]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="CategoryLabel" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/HistoryPanel/HistoryMargin/HistoryBox/SelectorRow"]
+layout_mode = 2
+text = "Budget Category"
+
+[node name="HistoryCategory" type="OptionButton" parent="MarginContainer/Layout/TableScroll/Sections/HistoryPanel/HistoryMargin/HistoryBox/SelectorRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 0)
+layout_mode = 2
+selected = 0
+item_count = 1
+popup/item_0/text = "Total"
+popup/item_0/id = 0
+
+[node name="HistoryChart" type="PanelContainer" parent="MarginContainer/Layout/TableScroll/Sections/HistoryPanel/HistoryMargin/HistoryBox"]
+custom_minimum_size = Vector2(640, 220)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Margin" type="MarginContainer" parent="MarginContainer/Layout/TableScroll/Sections/HistoryPanel/HistoryMargin/HistoryBox/HistoryChart"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Box" type="VBoxContainer" parent="MarginContainer/Layout/TableScroll/Sections/HistoryPanel/HistoryMargin/HistoryBox/HistoryChart/Margin"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/HistoryPanel/HistoryMargin/HistoryBox/HistoryChart/Margin/Box"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Spent vs Budget — Previous 7 Months"
+horizontal_alignment = 1
+
+[node name="HistorySelection" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/HistoryPanel/HistoryMargin/HistoryBox/HistoryChart/Margin/Box"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.62, 0.66, 0.7, 1)
+text = "Category: Total"
+horizontal_alignment = 1
+
+[node name="Body" type="CenterContainer" parent="MarginContainer/Layout/TableScroll/Sections/HistoryPanel/HistoryMargin/HistoryBox/HistoryChart/Margin/Box"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_minimum_size = Vector2(0, 140)
+
+[node name="Empty" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/HistoryPanel/HistoryMargin/HistoryBox/HistoryChart/Margin/Box/Body"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.62, 0.66, 0.7, 1)
+text = "No spending history yet."
+horizontal_alignment = 1
+
+[node name="HistoryNote" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/HistoryPanel/HistoryMargin/HistoryBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.62, 0.66, 0.7, 1)
+text = "This historical view updates after a month has ended."
+horizontal_alignment = 1
+
+[node name="HistoryHeader" type="HBoxContainer" parent="MarginContainer/Layout/TableScroll/Sections/HistoryPanel/HistoryMargin/HistoryBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="CategoryHeader" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/HistoryPanel/HistoryMargin/HistoryBox/HistoryHeader"]
+custom_minimum_size = Vector2(250, 31)
+layout_mode = 2
+text = "Budget Category"
+vertical_alignment = 1
+
+[node name="HistoryMonth1" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/HistoryPanel/HistoryMargin/HistoryBox/HistoryHeader"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(148, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="HistoryMonth2" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/HistoryPanel/HistoryMargin/HistoryBox/HistoryHeader"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(148, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="HistoryMonth3" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/HistoryPanel/HistoryMargin/HistoryBox/HistoryHeader"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(148, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="HistoryMonth4" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/HistoryPanel/HistoryMargin/HistoryBox/HistoryHeader"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(148, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="HistoryMonth5" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/HistoryPanel/HistoryMargin/HistoryBox/HistoryHeader"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(148, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="HistoryMonth6" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/HistoryPanel/HistoryMargin/HistoryBox/HistoryHeader"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(148, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="HistoryMonth7" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/HistoryPanel/HistoryMargin/HistoryBox/HistoryHeader"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(148, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="AvgHeader" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/HistoryPanel/HistoryMargin/HistoryBox/HistoryHeader"]
+custom_minimum_size = Vector2(150, 31)
+layout_mode = 2
+text = "Last 3 Mo. Avg"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="HistoryEmpty" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/HistoryPanel/HistoryMargin/HistoryBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.62, 0.66, 0.7, 1)
+text = "No spending history yet."
+horizontal_alignment = 1
+
+[node name="HistoryRows" type="VBoxContainer" parent="MarginContainer/Layout/TableScroll/Sections/HistoryPanel/HistoryMargin/HistoryBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="HistoryTotal" type="HBoxContainer" parent="MarginContainer/Layout/TableScroll/Sections/HistoryPanel/HistoryMargin/HistoryBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Caption" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/HistoryPanel/HistoryMargin/HistoryBox/HistoryTotal"]
+custom_minimum_size = Vector2(250, 31)
+layout_mode = 2
+text = "Total"
+vertical_alignment = 1
+
+[node name="Month1" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/HistoryPanel/HistoryMargin/HistoryBox/HistoryTotal"]
+custom_minimum_size = Vector2(148, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Month2" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/HistoryPanel/HistoryMargin/HistoryBox/HistoryTotal"]
+custom_minimum_size = Vector2(148, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Month3" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/HistoryPanel/HistoryMargin/HistoryBox/HistoryTotal"]
+custom_minimum_size = Vector2(148, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Month4" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/HistoryPanel/HistoryMargin/HistoryBox/HistoryTotal"]
+custom_minimum_size = Vector2(148, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Month5" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/HistoryPanel/HistoryMargin/HistoryBox/HistoryTotal"]
+custom_minimum_size = Vector2(148, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Month6" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/HistoryPanel/HistoryMargin/HistoryBox/HistoryTotal"]
+custom_minimum_size = Vector2(148, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Month7" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/HistoryPanel/HistoryMargin/HistoryBox/HistoryTotal"]
+custom_minimum_size = Vector2(148, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Avg" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/HistoryPanel/HistoryMargin/HistoryBox/HistoryTotal"]
+custom_minimum_size = Vector2(150, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="HistoryLeftOver" type="HBoxContainer" parent="MarginContainer/Layout/TableScroll/Sections/HistoryPanel/HistoryMargin/HistoryBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Caption" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/HistoryPanel/HistoryMargin/HistoryBox/HistoryLeftOver"]
+custom_minimum_size = Vector2(250, 31)
+layout_mode = 2
+text = "Budget Left Over"
+vertical_alignment = 1
+
+[node name="Month1" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/HistoryPanel/HistoryMargin/HistoryBox/HistoryLeftOver"]
+custom_minimum_size = Vector2(148, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Month2" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/HistoryPanel/HistoryMargin/HistoryBox/HistoryLeftOver"]
+custom_minimum_size = Vector2(148, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Month3" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/HistoryPanel/HistoryMargin/HistoryBox/HistoryLeftOver"]
+custom_minimum_size = Vector2(148, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Month4" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/HistoryPanel/HistoryMargin/HistoryBox/HistoryLeftOver"]
+custom_minimum_size = Vector2(148, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Month5" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/HistoryPanel/HistoryMargin/HistoryBox/HistoryLeftOver"]
+custom_minimum_size = Vector2(148, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Month6" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/HistoryPanel/HistoryMargin/HistoryBox/HistoryLeftOver"]
+custom_minimum_size = Vector2(148, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Month7" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/HistoryPanel/HistoryMargin/HistoryBox/HistoryLeftOver"]
+custom_minimum_size = Vector2(148, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Avg" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/HistoryPanel/HistoryMargin/HistoryBox/HistoryLeftOver"]
+custom_minimum_size = Vector2(150, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="IndependencePanel" type="PanelContainer" parent="MarginContainer/Layout/TableScroll/Sections"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="IndependenceMargin" type="MarginContainer" parent="MarginContainer/Layout/TableScroll/Sections/IndependencePanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="IndependenceBox" type="VBoxContainer" parent="MarginContainer/Layout/TableScroll/Sections/IndependencePanel/IndependenceMargin"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/IndependencePanel/IndependenceMargin/IndependenceBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Financial Independence"
+horizontal_alignment = 1
+
+[node name="IndependenceNote" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/IndependencePanel/IndependenceMargin/IndependenceBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.62, 0.66, 0.7, 1)
+text = "Detailed assumptions and projections stay on SWR."
+horizontal_alignment = 1
+
+[node name="Metric1" type="HBoxContainer" parent="MarginContainer/Layout/TableScroll/Sections/IndependencePanel/IndependenceMargin/IndependenceBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="NameA" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/IndependencePanel/IndependenceMargin/IndependenceBox/Metric1"]
+custom_minimum_size = Vector2(280, 31)
+layout_mode = 2
+text = "Investments"
+vertical_alignment = 1
+
+[node name="ValueA" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/IndependencePanel/IndependenceMargin/IndependenceBox/Metric1"]
+custom_minimum_size = Vector2(160, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Gap" type="Control" parent="MarginContainer/Layout/TableScroll/Sections/IndependencePanel/IndependenceMargin/IndependenceBox/Metric1"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="NameB" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/IndependencePanel/IndependenceMargin/IndependenceBox/Metric1"]
+custom_minimum_size = Vector2(280, 31)
+layout_mode = 2
+text = "Savings Rate"
+vertical_alignment = 1
+
+[node name="ValueB" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/IndependencePanel/IndependenceMargin/IndependenceBox/Metric1"]
+custom_minimum_size = Vector2(160, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Metric2" type="HBoxContainer" parent="MarginContainer/Layout/TableScroll/Sections/IndependencePanel/IndependenceMargin/IndependenceBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="NameA" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/IndependencePanel/IndependenceMargin/IndependenceBox/Metric2"]
+custom_minimum_size = Vector2(280, 31)
+layout_mode = 2
+text = "FI Number"
+vertical_alignment = 1
+
+[node name="ValueA" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/IndependencePanel/IndependenceMargin/IndependenceBox/Metric2"]
+custom_minimum_size = Vector2(160, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Gap" type="Control" parent="MarginContainer/Layout/TableScroll/Sections/IndependencePanel/IndependenceMargin/IndependenceBox/Metric2"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="NameB" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/IndependencePanel/IndependenceMargin/IndependenceBox/Metric2"]
+custom_minimum_size = Vector2(280, 31)
+layout_mode = 2
+text = "Percentage to FI"
+vertical_alignment = 1
+
+[node name="ValueB" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/IndependencePanel/IndependenceMargin/IndependenceBox/Metric2"]
+custom_minimum_size = Vector2(160, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Metric3" type="HBoxContainer" parent="MarginContainer/Layout/TableScroll/Sections/IndependencePanel/IndependenceMargin/IndependenceBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="NameA" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/IndependencePanel/IndependenceMargin/IndependenceBox/Metric3"]
+custom_minimum_size = Vector2(280, 31)
+layout_mode = 2
+text = "Estimated Monthly Withdrawal"
+vertical_alignment = 1
+
+[node name="ValueA" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/IndependencePanel/IndependenceMargin/IndependenceBox/Metric3"]
+custom_minimum_size = Vector2(160, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Gap" type="Control" parent="MarginContainer/Layout/TableScroll/Sections/IndependencePanel/IndependenceMargin/IndependenceBox/Metric3"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="NameB" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/IndependencePanel/IndependenceMargin/IndependenceBox/Metric3"]
+custom_minimum_size = Vector2(280, 31)
+layout_mode = 2
+text = "Estimated Annual Withdrawal"
+vertical_alignment = 1
+
+[node name="ValueB" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/IndependencePanel/IndependenceMargin/IndependenceBox/Metric3"]
+custom_minimum_size = Vector2(160, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Metric4" type="HBoxContainer" parent="MarginContainer/Layout/TableScroll/Sections/IndependencePanel/IndependenceMargin/IndependenceBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="NameA" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/IndependencePanel/IndependenceMargin/IndependenceBox/Metric4"]
+custom_minimum_size = Vector2(280, 31)
+layout_mode = 2
+text = "Coast FI"
+vertical_alignment = 1
+
+[node name="ValueA" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/IndependencePanel/IndependenceMargin/IndependenceBox/Metric4"]
+custom_minimum_size = Vector2(160, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Milestones" type="HBoxContainer" parent="MarginContainer/Layout/TableScroll/Sections/IndependencePanel/IndependenceMargin/IndependenceBox"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="NetWorthMilestones" type="PanelContainer" parent="MarginContainer/Layout/TableScroll/Sections/IndependencePanel/IndependenceMargin/IndependenceBox/Milestones"]
+custom_minimum_size = Vector2(360, 160)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Margin" type="MarginContainer" parent="MarginContainer/Layout/TableScroll/Sections/IndependencePanel/IndependenceMargin/IndependenceBox/Milestones/NetWorthMilestones"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Box" type="VBoxContainer" parent="MarginContainer/Layout/TableScroll/Sections/IndependencePanel/IndependenceMargin/IndependenceBox/Milestones/NetWorthMilestones/Margin"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/IndependencePanel/IndependenceMargin/IndependenceBox/Milestones/NetWorthMilestones/Margin/Box"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Net Worth Milestones"
+horizontal_alignment = 1
+
+[node name="Body" type="CenterContainer" parent="MarginContainer/Layout/TableScroll/Sections/IndependencePanel/IndependenceMargin/IndependenceBox/Milestones/NetWorthMilestones/Margin/Box"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_minimum_size = Vector2(0, 120)
+
+[node name="Empty" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/IndependencePanel/IndependenceMargin/IndependenceBox/Milestones/NetWorthMilestones/Margin/Box/Body"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.62, 0.66, 0.7, 1)
+text = "No milestone progress yet."
+horizontal_alignment = 1
+
+[node name="InvestmentMilestones" type="PanelContainer" parent="MarginContainer/Layout/TableScroll/Sections/IndependencePanel/IndependenceMargin/IndependenceBox/Milestones"]
+custom_minimum_size = Vector2(360, 160)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Margin" type="MarginContainer" parent="MarginContainer/Layout/TableScroll/Sections/IndependencePanel/IndependenceMargin/IndependenceBox/Milestones/InvestmentMilestones"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Box" type="VBoxContainer" parent="MarginContainer/Layout/TableScroll/Sections/IndependencePanel/IndependenceMargin/IndependenceBox/Milestones/InvestmentMilestones/Margin"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/IndependencePanel/IndependenceMargin/IndependenceBox/Milestones/InvestmentMilestones/Margin/Box"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Investment Milestones"
+horizontal_alignment = 1
+
+[node name="Body" type="CenterContainer" parent="MarginContainer/Layout/TableScroll/Sections/IndependencePanel/IndependenceMargin/IndependenceBox/Milestones/InvestmentMilestones/Margin/Box"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_minimum_size = Vector2(0, 120)
+
+[node name="Empty" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/IndependencePanel/IndependenceMargin/IndependenceBox/Milestones/InvestmentMilestones/Margin/Box/Body"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.62, 0.66, 0.7, 1)
+text = "No milestone progress yet."
+horizontal_alignment = 1
+

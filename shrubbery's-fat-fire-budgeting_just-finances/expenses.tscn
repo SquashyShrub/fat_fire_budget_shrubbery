@@ -1,3 +1,356 @@
-[gd_scene format=3 uid="uid://8mv135ydtgnj"]
+[gd_scene load_steps=2 format=3 uid="uid://8mv135ydtgnj"]
 
-[node name="Expenses" type="Node2D" unique_id=1510006585]
+[ext_resource type="Script" path="res://expenses.gd" id="1_script"]
+
+[node name="Expenses" type="Control" unique_id=1510006585]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="Layout" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 16
+
+[node name="Header" type="HBoxContainer" parent="MarginContainer/Layout"]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="TitleBox" type="VBoxContainer" parent="MarginContainer/Layout/Header"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Title" type="Label" parent="MarginContainer/Layout/Header/TitleBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Expenses"
+
+[node name="Hint" type="Label" parent="MarginContainer/Layout/Header/TitleBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.62, 0.66, 0.7, 1)
+theme_override_font_sizes/font_size = 14
+text = "Temporary entries. Not saved. Period changes do not load or store them."
+
+[node name="HeaderSpacer" type="Control" parent="MarginContainer/Layout/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="YearLabel" type="Label" parent="MarginContainer/Layout/Header"]
+layout_mode = 2
+text = "Year"
+
+[node name="YearOption" type="OptionButton" parent="MarginContainer/Layout/Header"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+selected = 0
+item_count = 5
+popup/item_0/text = "2026"
+popup/item_0/id = 0
+popup/item_1/text = "2027"
+popup/item_1/id = 1
+popup/item_2/text = "2028"
+popup/item_2/id = 2
+popup/item_3/text = "2029"
+popup/item_3/id = 3
+popup/item_4/text = "2030"
+popup/item_4/id = 4
+
+[node name="MonthLabel" type="Label" parent="MarginContainer/Layout/Header"]
+layout_mode = 2
+text = "Month"
+
+[node name="MonthOption" type="OptionButton" parent="MarginContainer/Layout/Header"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+selected = 0
+item_count = 12
+popup/item_0/text = "January"
+popup/item_0/id = 0
+popup/item_1/text = "February"
+popup/item_1/id = 1
+popup/item_2/text = "March"
+popup/item_2/id = 2
+popup/item_3/text = "April"
+popup/item_3/id = 3
+popup/item_4/text = "May"
+popup/item_4/id = 4
+popup/item_5/text = "June"
+popup/item_5/id = 5
+popup/item_6/text = "July"
+popup/item_6/id = 6
+popup/item_7/text = "August"
+popup/item_7/id = 7
+popup/item_8/text = "September"
+popup/item_8/id = 8
+popup/item_9/text = "October"
+popup/item_9/id = 9
+popup/item_10/text = "November"
+popup/item_10/id = 10
+popup/item_11/text = "December"
+popup/item_11/id = 11
+
+[node name="TableScroll" type="ScrollContainer" parent="MarginContainer/Layout"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+follow_focus = true
+horizontal_scroll_mode = 1
+vertical_scroll_mode = 1
+
+[node name="Sections" type="VBoxContainer" parent="MarginContainer/Layout/TableScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+
+[node name="MonthlyPanel" type="PanelContainer" parent="MarginContainer/Layout/TableScroll/Sections"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MonthlyMargin" type="MarginContainer" parent="MarginContainer/Layout/TableScroll/Sections/MonthlyPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="MonthlyBox" type="VBoxContainer" parent="MarginContainer/Layout/TableScroll/Sections/MonthlyPanel/MonthlyMargin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/MonthlyPanel/MonthlyMargin/MonthlyBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "From Monthly Budget"
+horizontal_alignment = 1
+
+[node name="MonthlyHeader" type="HBoxContainer" parent="MarginContainer/Layout/TableScroll/Sections/MonthlyPanel/MonthlyMargin/MonthlyBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="DateHeader" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/MonthlyPanel/MonthlyMargin/MonthlyBox/MonthlyHeader"]
+custom_minimum_size = Vector2(160, 31)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Date"
+vertical_alignment = 1
+
+[node name="VendorHeader" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/MonthlyPanel/MonthlyMargin/MonthlyBox/MonthlyHeader"]
+custom_minimum_size = Vector2(240, 31)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Vendor"
+vertical_alignment = 1
+
+[node name="CategoryHeader" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/MonthlyPanel/MonthlyMargin/MonthlyBox/MonthlyHeader"]
+custom_minimum_size = Vector2(260, 31)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Budget Category"
+vertical_alignment = 1
+
+[node name="AmountHeader" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/MonthlyPanel/MonthlyMargin/MonthlyBox/MonthlyHeader"]
+custom_minimum_size = Vector2(120, 31)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Amount"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="RemoveHeader" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/MonthlyPanel/MonthlyMargin/MonthlyBox/MonthlyHeader"]
+custom_minimum_size = Vector2(96, 31)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Remove"
+vertical_alignment = 1
+
+[node name="MonthlyEmpty" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/MonthlyPanel/MonthlyMargin/MonthlyBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.62, 0.66, 0.7, 1)
+text = "No expenses entered for this month"
+horizontal_alignment = 1
+
+[node name="MonthlyRows" type="VBoxContainer" parent="MarginContainer/Layout/TableScroll/Sections/MonthlyPanel/MonthlyMargin/MonthlyBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="AddMonthly" type="Button" parent="MarginContainer/Layout/TableScroll/Sections/MonthlyPanel/MonthlyMargin/MonthlyBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Add Expense"
+
+[node name="MonthlyTotal" type="HBoxContainer" parent="MarginContainer/Layout/TableScroll/Sections/MonthlyPanel/MonthlyMargin/MonthlyBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TotalCaption" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/MonthlyPanel/MonthlyMargin/MonthlyBox/MonthlyTotal"]
+custom_minimum_size = Vector2(160, 31)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Total"
+vertical_alignment = 1
+
+[node name="TotalGapVendor" type="Control" parent="MarginContainer/Layout/TableScroll/Sections/MonthlyPanel/MonthlyMargin/MonthlyBox/MonthlyTotal"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+
+[node name="TotalGapCategory" type="Control" parent="MarginContainer/Layout/TableScroll/Sections/MonthlyPanel/MonthlyMargin/MonthlyBox/MonthlyTotal"]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+
+[node name="TotalValue" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/MonthlyPanel/MonthlyMargin/MonthlyBox/MonthlyTotal"]
+custom_minimum_size = Vector2(120, 31)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TotalGapRemove" type="Control" parent="MarginContainer/Layout/TableScroll/Sections/MonthlyPanel/MonthlyMargin/MonthlyBox/MonthlyTotal"]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+
+[node name="AnnualPanel" type="PanelContainer" parent="MarginContainer/Layout/TableScroll/Sections"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AnnualMargin" type="MarginContainer" parent="MarginContainer/Layout/TableScroll/Sections/AnnualPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="AnnualBox" type="VBoxContainer" parent="MarginContainer/Layout/TableScroll/Sections/AnnualPanel/AnnualMargin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AnnualPanel/AnnualMargin/AnnualBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "From Annual Budget"
+horizontal_alignment = 1
+
+[node name="AnnualHeader" type="HBoxContainer" parent="MarginContainer/Layout/TableScroll/Sections/AnnualPanel/AnnualMargin/AnnualBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="DateHeader" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AnnualPanel/AnnualMargin/AnnualBox/AnnualHeader"]
+custom_minimum_size = Vector2(160, 31)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Date"
+vertical_alignment = 1
+
+[node name="VendorHeader" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AnnualPanel/AnnualMargin/AnnualBox/AnnualHeader"]
+custom_minimum_size = Vector2(240, 31)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Vendor"
+vertical_alignment = 1
+
+[node name="CategoryHeader" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AnnualPanel/AnnualMargin/AnnualBox/AnnualHeader"]
+custom_minimum_size = Vector2(260, 31)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Budget Category"
+vertical_alignment = 1
+
+[node name="AmountHeader" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AnnualPanel/AnnualMargin/AnnualBox/AnnualHeader"]
+custom_minimum_size = Vector2(120, 31)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Amount"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="RemoveHeader" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AnnualPanel/AnnualMargin/AnnualBox/AnnualHeader"]
+custom_minimum_size = Vector2(96, 31)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Remove"
+vertical_alignment = 1
+
+[node name="AnnualEmpty" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AnnualPanel/AnnualMargin/AnnualBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.62, 0.66, 0.7, 1)
+text = "No expenses entered for this month"
+horizontal_alignment = 1
+
+[node name="AnnualRows" type="VBoxContainer" parent="MarginContainer/Layout/TableScroll/Sections/AnnualPanel/AnnualMargin/AnnualBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="AddAnnual" type="Button" parent="MarginContainer/Layout/TableScroll/Sections/AnnualPanel/AnnualMargin/AnnualBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Add Expense"
+
+[node name="AnnualTotal" type="HBoxContainer" parent="MarginContainer/Layout/TableScroll/Sections/AnnualPanel/AnnualMargin/AnnualBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TotalCaption" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AnnualPanel/AnnualMargin/AnnualBox/AnnualTotal"]
+custom_minimum_size = Vector2(160, 31)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Total"
+vertical_alignment = 1
+
+[node name="TotalGapVendor" type="Control" parent="MarginContainer/Layout/TableScroll/Sections/AnnualPanel/AnnualMargin/AnnualBox/AnnualTotal"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+
+[node name="TotalGapCategory" type="Control" parent="MarginContainer/Layout/TableScroll/Sections/AnnualPanel/AnnualMargin/AnnualBox/AnnualTotal"]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+
+[node name="TotalValue" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AnnualPanel/AnnualMargin/AnnualBox/AnnualTotal"]
+custom_minimum_size = Vector2(120, 31)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TotalGapRemove" type="Control" parent="MarginContainer/Layout/TableScroll/Sections/AnnualPanel/AnnualMargin/AnnualBox/AnnualTotal"]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 2

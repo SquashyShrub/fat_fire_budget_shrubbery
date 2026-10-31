@@ -1,3 +1,2638 @@
-[gd_scene format=3 uid="uid://dvx5l70txkeic"]
+[gd_scene load_steps=2 format=3 uid="uid://dvx5l70txkeic"]
 
-[node name="Balance Sheet" type="Node2D" unique_id=614656970]
+[ext_resource type="Script" path="res://balance_sheet.gd" id="1_script"]
+
+[node name="Balance Sheet" type="Control" unique_id=614656970]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="Layout" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 16
+
+[node name="Header" type="HBoxContainer" parent="MarginContainer/Layout"]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="TitleBox" type="VBoxContainer" parent="MarginContainer/Layout/Header"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Title" type="Label" parent="MarginContainer/Layout/Header/TitleBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Balance Sheet"
+
+[node name="Hint" type="Label" parent="MarginContainer/Layout/Header/TitleBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.62, 0.66, 0.7, 1)
+theme_override_font_sizes/font_size = 14
+text = "Temporary placeholders. Not saved."
+
+[node name="HeaderSpacer" type="Control" parent="MarginContainer/Layout/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="YearLabel" type="Label" parent="MarginContainer/Layout/Header"]
+layout_mode = 2
+text = "Year"
+
+[node name="YearOption" type="OptionButton" parent="MarginContainer/Layout/Header"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+selected = 0
+item_count = 5
+popup/item_0/text = "2026"
+popup/item_0/id = 0
+popup/item_1/text = "2027"
+popup/item_1/id = 1
+popup/item_2/text = "2028"
+popup/item_2/id = 2
+popup/item_3/text = "2029"
+popup/item_3/id = 3
+popup/item_4/text = "2030"
+popup/item_4/id = 4
+
+[node name="TableScroll" type="ScrollContainer" parent="MarginContainer/Layout"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+follow_focus = true
+horizontal_scroll_mode = 1
+vertical_scroll_mode = 1
+
+[node name="Sections" type="VBoxContainer" parent="MarginContainer/Layout/TableScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+
+[node name="BankPanel" type="PanelContainer" parent="MarginContainer/Layout/TableScroll/Sections"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BankMargin" type="MarginContainer" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="BankBox" type="VBoxContainer" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Bank Accounts"
+horizontal_alignment = 1
+
+[node name="BankTable" type="GridContainer" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 6
+columns = 13
+
+[node name="BankAccountHeader" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(270, 31)
+layout_mode = 2
+text = "Account"
+vertical_alignment = 1
+
+[node name="BankHeaderJanuary" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "January"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="BankHeaderFebruary" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "February"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="BankHeaderMarch" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "March"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="BankHeaderApril" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "April"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="BankHeaderMay" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "May"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="BankHeaderJune" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "June"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="BankHeaderJuly" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "July"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="BankHeaderAugust" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "August"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="BankHeaderSeptember" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "September"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="BankHeaderOctober" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "October"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="BankHeaderNovember" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "November"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="BankHeaderDecember" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "December"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="PrimaryChecking" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(270, 31)
+layout_mode = 2
+text_overrun_behavior = 3
+text = "Primary Checking Account"
+vertical_alignment = 1
+
+[node name="PrimaryCheckingJanuary" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="PrimaryCheckingFebruary" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="PrimaryCheckingMarch" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="PrimaryCheckingApril" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="PrimaryCheckingMay" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="PrimaryCheckingJune" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="PrimaryCheckingJuly" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="PrimaryCheckingAugust" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="PrimaryCheckingSeptember" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="PrimaryCheckingOctober" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="PrimaryCheckingNovember" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="PrimaryCheckingDecember" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherChecking" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(270, 31)
+layout_mode = 2
+text_overrun_behavior = 3
+text = "Other Checking Account"
+vertical_alignment = 1
+
+[node name="OtherCheckingJanuary" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherCheckingFebruary" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherCheckingMarch" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherCheckingApril" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherCheckingMay" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherCheckingJune" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherCheckingJuly" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherCheckingAugust" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherCheckingSeptember" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherCheckingOctober" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherCheckingNovember" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherCheckingDecember" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Savings1" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(270, 31)
+layout_mode = 2
+text_overrun_behavior = 3
+text = "Savings Account #1"
+vertical_alignment = 1
+
+[node name="Savings1January" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Savings1February" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Savings1March" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Savings1April" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Savings1May" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Savings1June" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Savings1July" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Savings1August" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Savings1September" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Savings1October" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Savings1November" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Savings1December" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Savings2" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(270, 31)
+layout_mode = 2
+text_overrun_behavior = 3
+text = "Savings Account #2"
+vertical_alignment = 1
+
+[node name="Savings2January" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Savings2February" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Savings2March" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Savings2April" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Savings2May" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Savings2June" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Savings2July" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Savings2August" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Savings2September" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Savings2October" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Savings2November" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Savings2December" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Savings3" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(270, 31)
+layout_mode = 2
+text_overrun_behavior = 3
+text = "Savings Account #3"
+vertical_alignment = 1
+
+[node name="Savings3January" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Savings3February" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Savings3March" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Savings3April" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Savings3May" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Savings3June" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Savings3July" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Savings3August" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Savings3September" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Savings3October" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Savings3November" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Savings3December" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Savings4" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(270, 31)
+layout_mode = 2
+text_overrun_behavior = 3
+text = "Savings Account #4"
+vertical_alignment = 1
+
+[node name="Savings4January" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Savings4February" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Savings4March" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Savings4April" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Savings4May" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Savings4June" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Savings4July" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Savings4August" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Savings4September" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Savings4October" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Savings4November" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Savings4December" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="TotalBank" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(270, 31)
+layout_mode = 2
+text_overrun_behavior = 3
+text = "Total Bank Accounts"
+vertical_alignment = 1
+
+[node name="TotalBankJanuary" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TotalBankFebruary" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TotalBankMarch" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TotalBankApril" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TotalBankMay" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TotalBankJune" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TotalBankJuly" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TotalBankAugust" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TotalBankSeptember" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TotalBankOctober" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TotalBankNovember" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TotalBankDecember" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/BankPanel/BankMargin/BankBox/BankTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="AssetsPanel" type="PanelContainer" parent="MarginContainer/Layout/TableScroll/Sections"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AssetsMargin" type="MarginContainer" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="AssetsBox" type="VBoxContainer" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Assets"
+horizontal_alignment = 1
+
+[node name="AssetsTable" type="GridContainer" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 6
+columns = 13
+
+[node name="AssetsAccountHeader" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(270, 31)
+layout_mode = 2
+text = "Account"
+vertical_alignment = 1
+
+[node name="AssetsHeaderJanuary" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "January"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="AssetsHeaderFebruary" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "February"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="AssetsHeaderMarch" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "March"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="AssetsHeaderApril" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "April"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="AssetsHeaderMay" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "May"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="AssetsHeaderJune" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "June"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="AssetsHeaderJuly" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "July"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="AssetsHeaderAugust" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "August"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="AssetsHeaderSeptember" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "September"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="AssetsHeaderOctober" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "October"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="AssetsHeaderNovember" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "November"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="AssetsHeaderDecember" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "December"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="PreTax" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(270, 31)
+layout_mode = 2
+text_overrun_behavior = 3
+text = "Pre Tax Retirement"
+vertical_alignment = 1
+
+[node name="PreTaxJanuary" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="PreTaxFebruary" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="PreTaxMarch" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="PreTaxApril" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="PreTaxMay" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="PreTaxJune" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="PreTaxJuly" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="PreTaxAugust" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="PreTaxSeptember" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="PreTaxOctober" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="PreTaxNovember" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="PreTaxDecember" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="AfterTax" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(270, 31)
+layout_mode = 2
+text_overrun_behavior = 3
+text = "After Tax Retirement"
+vertical_alignment = 1
+
+[node name="AfterTaxJanuary" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="AfterTaxFebruary" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="AfterTaxMarch" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="AfterTaxApril" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="AfterTaxMay" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="AfterTaxJune" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="AfterTaxJuly" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="AfterTaxAugust" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="AfterTaxSeptember" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="AfterTaxOctober" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="AfterTaxNovember" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="AfterTaxDecember" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherAsset1" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(270, 31)
+layout_mode = 2
+text_overrun_behavior = 3
+text = "Other Asset #1"
+vertical_alignment = 1
+
+[node name="OtherAsset1January" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherAsset1February" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherAsset1March" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherAsset1April" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherAsset1May" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherAsset1June" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherAsset1July" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherAsset1August" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherAsset1September" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherAsset1October" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherAsset1November" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherAsset1December" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherAsset2" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(270, 31)
+layout_mode = 2
+text_overrun_behavior = 3
+text = "Other Asset #2"
+vertical_alignment = 1
+
+[node name="OtherAsset2January" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherAsset2February" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherAsset2March" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherAsset2April" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherAsset2May" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherAsset2June" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherAsset2July" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherAsset2August" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherAsset2September" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherAsset2October" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherAsset2November" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherAsset2December" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherAsset3" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(270, 31)
+layout_mode = 2
+text_overrun_behavior = 3
+text = "Other Asset #3"
+vertical_alignment = 1
+
+[node name="OtherAsset3January" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherAsset3February" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherAsset3March" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherAsset3April" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherAsset3May" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherAsset3June" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherAsset3July" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherAsset3August" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherAsset3September" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherAsset3October" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherAsset3November" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherAsset3December" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherAsset4" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(270, 31)
+layout_mode = 2
+text_overrun_behavior = 3
+text = "Other Asset #4"
+vertical_alignment = 1
+
+[node name="OtherAsset4January" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherAsset4February" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherAsset4March" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherAsset4April" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherAsset4May" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherAsset4June" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherAsset4July" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherAsset4August" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherAsset4September" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherAsset4October" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherAsset4November" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="OtherAsset4December" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="TotalAssets" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(270, 31)
+layout_mode = 2
+text_overrun_behavior = 3
+text = "Total Assets"
+vertical_alignment = 1
+
+[node name="TotalAssetsJanuary" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TotalAssetsFebruary" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TotalAssetsMarch" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TotalAssetsApril" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TotalAssetsMay" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TotalAssetsJune" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TotalAssetsJuly" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TotalAssetsAugust" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TotalAssetsSeptember" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TotalAssetsOctober" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TotalAssetsNovember" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TotalAssetsDecember" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/AssetsPanel/AssetsMargin/AssetsBox/AssetsTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LiabilitiesPanel" type="PanelContainer" parent="MarginContainer/Layout/TableScroll/Sections"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LiabilitiesMargin" type="MarginContainer" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="LiabilitiesBox" type="VBoxContainer" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Liabilities"
+horizontal_alignment = 1
+
+[node name="LiabilitiesTable" type="GridContainer" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 6
+columns = 13
+
+[node name="LiabilitiesAccountHeader" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(270, 31)
+layout_mode = 2
+text = "Account"
+vertical_alignment = 1
+
+[node name="LiabilitiesHeaderJanuary" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "January"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LiabilitiesHeaderFebruary" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "February"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LiabilitiesHeaderMarch" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "March"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LiabilitiesHeaderApril" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "April"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LiabilitiesHeaderMay" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "May"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LiabilitiesHeaderJune" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "June"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LiabilitiesHeaderJuly" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "July"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LiabilitiesHeaderAugust" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "August"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LiabilitiesHeaderSeptember" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "September"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LiabilitiesHeaderOctober" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "October"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LiabilitiesHeaderNovember" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "November"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LiabilitiesHeaderDecember" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "December"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Rent" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(270, 31)
+layout_mode = 2
+text_overrun_behavior = 3
+text = "Rent or Mortgage"
+vertical_alignment = 1
+
+[node name="RentJanuary" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="RentFebruary" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="RentMarch" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="RentApril" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="RentMay" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="RentJune" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="RentJuly" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="RentAugust" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="RentSeptember" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="RentOctober" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="RentNovember" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="RentDecember" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="CarLoan" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(270, 31)
+layout_mode = 2
+text_overrun_behavior = 3
+text = "Car Loan"
+vertical_alignment = 1
+
+[node name="CarLoanJanuary" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="CarLoanFebruary" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="CarLoanMarch" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="CarLoanApril" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="CarLoanMay" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="CarLoanJune" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="CarLoanJuly" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="CarLoanAugust" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="CarLoanSeptember" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="CarLoanOctober" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="CarLoanNovember" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="CarLoanDecember" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="StudentLoan" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(270, 31)
+layout_mode = 2
+text_overrun_behavior = 3
+text = "Student Loan Debt"
+vertical_alignment = 1
+
+[node name="StudentLoanJanuary" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="StudentLoanFebruary" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="StudentLoanMarch" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="StudentLoanApril" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="StudentLoanMay" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="StudentLoanJune" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="StudentLoanJuly" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="StudentLoanAugust" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="StudentLoanSeptember" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="StudentLoanOctober" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="StudentLoanNovember" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="StudentLoanDecember" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Credit1" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(270, 31)
+layout_mode = 2
+text_overrun_behavior = 3
+text = "Credit Card #1"
+vertical_alignment = 1
+
+[node name="Credit1January" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Credit1February" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Credit1March" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Credit1April" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Credit1May" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Credit1June" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Credit1July" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Credit1August" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Credit1September" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Credit1October" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Credit1November" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Credit1December" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Credit2" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(270, 31)
+layout_mode = 2
+text_overrun_behavior = 3
+text = "Credit Card #2"
+vertical_alignment = 1
+
+[node name="Credit2January" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Credit2February" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Credit2March" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Credit2April" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Credit2May" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Credit2June" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Credit2July" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Credit2August" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Credit2September" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Credit2October" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Credit2November" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Credit2December" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Credit3" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(270, 31)
+layout_mode = 2
+text_overrun_behavior = 3
+text = "Credit Card #3"
+vertical_alignment = 1
+
+[node name="Credit3January" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Credit3February" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Credit3March" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Credit3April" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Credit3May" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Credit3June" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Credit3July" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Credit3August" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Credit3September" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Credit3October" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Credit3November" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="Credit3December" type="LineEdit" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="TotalLiabilities" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(270, 31)
+layout_mode = 2
+text_overrun_behavior = 3
+text = "Total Liabilities"
+vertical_alignment = 1
+
+[node name="TotalLiabilitiesJanuary" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TotalLiabilitiesFebruary" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TotalLiabilitiesMarch" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TotalLiabilitiesApril" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TotalLiabilitiesMay" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TotalLiabilitiesJune" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TotalLiabilitiesJuly" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TotalLiabilitiesAugust" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TotalLiabilitiesSeptember" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TotalLiabilitiesOctober" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TotalLiabilitiesNovember" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TotalLiabilitiesDecember" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/LiabilitiesPanel/LiabilitiesMargin/LiabilitiesBox/LiabilitiesTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryPanel" type="PanelContainer" parent="MarginContainer/Layout/TableScroll/Sections"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SummaryMargin" type="MarginContainer" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="SummaryBox" type="VBoxContainer" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Balance Summary"
+horizontal_alignment = 1
+
+[node name="SummaryTable" type="GridContainer" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 6
+columns = 13
+
+[node name="SummaryAccountHeader" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(270, 31)
+layout_mode = 2
+text = "Account"
+vertical_alignment = 1
+
+[node name="SummaryHeaderJanuary" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "January"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryHeaderFebruary" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "February"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryHeaderMarch" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "March"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryHeaderApril" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "April"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryHeaderMay" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "May"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryHeaderJune" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "June"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryHeaderJuly" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "July"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryHeaderAugust" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "August"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryHeaderSeptember" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "September"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryHeaderOctober" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "October"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryHeaderNovember" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "November"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryHeaderDecember" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "December"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryBank" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(270, 31)
+layout_mode = 2
+text_overrun_behavior = 3
+text = "Total Bank Accounts"
+vertical_alignment = 1
+
+[node name="SummaryBankJanuary" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryBankFebruary" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryBankMarch" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryBankApril" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryBankMay" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryBankJune" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryBankJuly" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryBankAugust" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryBankSeptember" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryBankOctober" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryBankNovember" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryBankDecember" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryAssets" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(270, 31)
+layout_mode = 2
+text_overrun_behavior = 3
+text = "Total Assets"
+vertical_alignment = 1
+
+[node name="SummaryAssetsJanuary" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryAssetsFebruary" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryAssetsMarch" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryAssetsApril" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryAssetsMay" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryAssetsJune" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryAssetsJuly" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryAssetsAugust" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryAssetsSeptember" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryAssetsOctober" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryAssetsNovember" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryAssetsDecember" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryLiabilities" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(270, 31)
+layout_mode = 2
+text_overrun_behavior = 3
+text = "Total Liabilities"
+vertical_alignment = 1
+
+[node name="SummaryLiabilitiesJanuary" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryLiabilitiesFebruary" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryLiabilitiesMarch" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryLiabilitiesApril" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryLiabilitiesMay" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryLiabilitiesJune" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryLiabilitiesJuly" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryLiabilitiesAugust" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryLiabilitiesSeptember" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryLiabilitiesOctober" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryLiabilitiesNovember" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryLiabilitiesDecember" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryNetWorth" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(270, 31)
+layout_mode = 2
+text_overrun_behavior = 3
+text = "Net Worth"
+vertical_alignment = 1
+
+[node name="SummaryNetWorthJanuary" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryNetWorthFebruary" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryNetWorthMarch" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryNetWorthApril" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryNetWorthMay" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryNetWorthJune" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryNetWorthJuly" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryNetWorthAugust" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryNetWorthSeptember" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryNetWorthOctober" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryNetWorthNovember" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryNetWorthDecember" type="Label" parent="MarginContainer/Layout/TableScroll/Sections/SummaryPanel/SummaryMargin/SummaryBox/SummaryTable"]
+custom_minimum_size = Vector2(112, 31)
+layout_mode = 2
+text = "—"
+horizontal_alignment = 2
+vertical_alignment = 1
+

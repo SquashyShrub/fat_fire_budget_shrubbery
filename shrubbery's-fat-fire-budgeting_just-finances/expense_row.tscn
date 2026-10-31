@@ -1,0 +1,53 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://expense_row.gd" id="1_script"]
+
+[node name="ExpenseRow" type="HBoxContainer"]
+theme_override_constants/separation = 8
+script = ExtResource("1_script")
+
+[node name="DateEdit" type="LineEdit" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 31)
+layout_mode = 2
+size_flags_horizontal = 0
+placeholder_text = "YYYY-MM-DD"
+tooltip_text = "Date"
+
+[node name="VendorEdit" type="LineEdit" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 31)
+layout_mode = 2
+size_flags_horizontal = 0
+placeholder_text = "Vendor"
+
+[node name="CategorySlot" type="Control" parent="."]
+custom_minimum_size = Vector2(260, 31)
+layout_mode = 2
+size_flags_horizontal = 0
+clip_contents = true
+
+[node name="CategoryOption" type="OptionButton" parent="CategorySlot"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+fit_to_longest_item = false
+
+[node name="AmountEdit" type="LineEdit" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 31)
+layout_mode = 2
+size_flags_horizontal = 0
+placeholder_text = "0.00"
+alignment = 2
+
+[node name="RemoveButton" type="Button" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 31)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Remove"

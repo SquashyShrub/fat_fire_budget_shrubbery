@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://djth2g1p3b0cv"]
 
-[node name="Config" type="Node2D" unique_id=826526752]
+[node name="Config" type="Control" unique_id=1788878323]
+layout_mode = 3
+anchors_preset = 0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=791372772]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -29,7 +32,7 @@ top_level = true
 layout_mode = 2
 theme_override_constants/h_separation = 60
 theme_override_constants/v_separation = 40
-columns = 4
+columns = 2
 
 [node name="IncomeBreakdown" type="VBoxContainer" parent="ScrollContainer/MarginContainer/Sections" unique_id=168087283]
 custom_minimum_size = Vector2(480, 304)
