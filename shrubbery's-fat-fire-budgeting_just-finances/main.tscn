@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cvh68sdcp537d"]
+
+[ext_resource type="PackedScene" uid="uid://b7qfd2hqipvmw" path="res://dashboard.tscn" id="1_7mycd"]
+[ext_resource type="PackedScene" uid="uid://8mv135ydtgnj" path="res://expenses.tscn" id="2_272bh"]
+[ext_resource type="PackedScene" uid="uid://dvx5l70txkeic" path="res://balance_sheet.tscn" id="3_5vw27"]
+[ext_resource type="PackedScene" uid="uid://dtckju8qmg1vi" path="res://amortization.tscn" id="4_kek77"]
+[ext_resource type="PackedScene" uid="uid://b8dbeo7otvlbx" path="res://swr.tscn" id="5_4c57u"]
+[ext_resource type="PackedScene" uid="uid://djth2g1p3b0cv" path="res://config.tscn" id="6_efxa6"]
+
+[node name="Main" type="Node" unique_id=1167220970]
+
+[node name="Dashboard" parent="." unique_id=1617273650 instance=ExtResource("1_7mycd")]
+
+[node name="Expenses" parent="." unique_id=1510006585 instance=ExtResource("2_272bh")]
+
+[node name="Balance Sheet" parent="." unique_id=614656970 instance=ExtResource("3_5vw27")]
+
+[node name="Amortization" parent="." unique_id=1979977616 instance=ExtResource("4_kek77")]
+
+[node name="SWR" parent="." unique_id=462603744 instance=ExtResource("5_4c57u")]
+
+[node name="Config" parent="." unique_id=826526752 instance=ExtResource("6_efxa6")]
