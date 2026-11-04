@@ -1,1052 +1,1064 @@
-[gd_scene format=3 uid="uid://djth2g1p3b0cv"]
+[gd_scene format=3 uid="uid://ctb2a4bq5rug8"]
 
-[node name="Config" type="Control" unique_id=1788878323]
+[node name="Config" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 
-[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=791372772]
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+show_behind_parent = true
+clip_contents = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 1.0
+offset_right = 1095.0
+offset_bottom = 654.0
 grow_horizontal = 2
 grow_vertical = 2
-follow_focus = true
-scroll_horizontal = 10
-scroll_vertical = 10
-scroll_horizontal_by_default = true
+horizontal_scroll_mode = 0
 scroll_deadzone = 1
-scroll_hint_mode = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer" unique_id=1216368669]
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer"]
+show_behind_parent = true
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
+size_flags_vertical = 0
 theme_override_constants/margin_left = 24
 theme_override_constants/margin_top = 24
 theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 24
 
-[node name="Sections" type="GridContainer" parent="ScrollContainer/MarginContainer" unique_id=1827874367]
-top_level = true
+[node name="Sections" type="GridContainer" parent="ScrollContainer/MarginContainer"]
+show_behind_parent = true
 layout_mode = 2
-theme_override_constants/h_separation = 60
-theme_override_constants/v_separation = 40
+size_flags_vertical = 0
+theme_override_constants/h_separation = 100
+theme_override_constants/v_separation = 60
 columns = 2
 
-[node name="IncomeBreakdown" type="VBoxContainer" parent="ScrollContainer/MarginContainer/Sections" unique_id=168087283]
+[node name="IncomeBreakdown" type="VBoxContainer" parent="ScrollContainer/MarginContainer/Sections"]
 custom_minimum_size = Vector2(480, 304)
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_constants/separation = 12
 
-[node name="Title" type="Label" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown" unique_id=588114347]
+[node name="Title" type="Label" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Income Breakdown"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown" unique_id=850058814]
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown"]
 layout_mode = 2
 
-[node name="AnnualGrossSalary" type="Label" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown/HBoxContainer" unique_id=1396554176]
+[node name="AnnualGrossSalary" type="Label" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown/HBoxContainer"]
 custom_minimum_size = Vector2(380, 0)
 layout_mode = 2
 text = "Enter Annual Gross Salary: "
 
-[node name="AnnualGrossInput" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown/HBoxContainer" unique_id=1415720650]
+[node name="AnnualGrossInput" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown/HBoxContainer"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 placeholder_text = "$0.00"
 alignment = 2
 
-[node name="IncomeTable" type="GridContainer" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown" unique_id=1834754639]
+[node name="IncomeTable" type="GridContainer" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown"]
 layout_mode = 2
 size_flags_vertical = 3
 columns = 3
 
-[node name="Empty" type="Label" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown/IncomeTable" unique_id=282462674]
+[node name="Empty" type="Label" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown/IncomeTable"]
 layout_mode = 2
 
-[node name="Monthly" type="Label" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown/IncomeTable" unique_id=1371149068]
+[node name="Monthly" type="Label" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown/IncomeTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "Monthly"
 horizontal_alignment = 2
 
-[node name="Annual" type="Label" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown/IncomeTable" unique_id=614393947]
+[node name="Annual" type="Label" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown/IncomeTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "Annual"
 horizontal_alignment = 2
 
-[node name="GrossSalary" type="Label" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown/IncomeTable" unique_id=177496400]
+[node name="GrossSalary" type="Label" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown/IncomeTable"]
 layout_mode = 2
 text = "Gross Salary: "
 
-[node name="MonthlyGrossSalary" type="Label" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown/IncomeTable" unique_id=268005737]
+[node name="MonthlyGrossSalary" type="Label" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown/IncomeTable"]
 layout_mode = 2
 text = "-"
 horizontal_alignment = 2
 
-[node name="AnnualGrossSalary" type="Label" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown/IncomeTable" unique_id=1677923625]
+[node name="AnnualGrossSalary" type="Label" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown/IncomeTable"]
 layout_mode = 2
 text = "-"
 horizontal_alignment = 2
 
-[node name="PreTaxContribution" type="Label" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown/IncomeTable" unique_id=281967284]
+[node name="PreTaxContribution" type="Label" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown/IncomeTable"]
 layout_mode = 2
 text = "Pre-Tax Requirement Contribution: "
 
-[node name="MonthlyPreTaxContributionInput" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown/IncomeTable" unique_id=30132105]
+[node name="MonthlyPreTaxContributionInput" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown/IncomeTable"]
 layout_mode = 2
 placeholder_text = "$0.00"
 alignment = 2
 
-[node name="MonthlyPreTaxContribution" type="Label" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown/IncomeTable" unique_id=579130511]
+[node name="MonthlyPreTaxContribution" type="Label" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown/IncomeTable"]
 layout_mode = 2
 text = "-"
 horizontal_alignment = 2
 
-[node name="NetSalary" type="Label" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown/IncomeTable" unique_id=1041603495]
+[node name="NetSalary" type="Label" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown/IncomeTable"]
 layout_mode = 2
 text = "Net Salary: "
 
-[node name="MonthylNetSalaryInput" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown/IncomeTable" unique_id=198318778]
+[node name="MonthylNetSalaryInput" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown/IncomeTable"]
 layout_mode = 2
 placeholder_text = "$0.00"
 alignment = 2
 
-[node name="AnnualNetSalary" type="Label" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown/IncomeTable" unique_id=110739553]
+[node name="AnnualNetSalary" type="Label" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown/IncomeTable"]
 layout_mode = 2
 text = "-"
 horizontal_alignment = 2
 
-[node name="AvgExtraIncome" type="Label" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown/IncomeTable" unique_id=841056285]
+[node name="AvgExtraIncome" type="Label" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown/IncomeTable"]
 layout_mode = 2
 text = "Average Extra Income: "
 
-[node name="MonthyAvgExtraIncomeInput" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown/IncomeTable" unique_id=660588283]
+[node name="MonthyAvgExtraIncomeInput" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown/IncomeTable"]
 layout_mode = 2
 placeholder_text = "$0.00"
 alignment = 2
 
-[node name="AnnualAvgExtraIncome" type="Label" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown/IncomeTable" unique_id=1399662735]
+[node name="AnnualAvgExtraIncome" type="Label" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown/IncomeTable"]
 layout_mode = 2
 text = "-"
 horizontal_alignment = 2
 
-[node name="GrossTotalIncome" type="Label" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown/IncomeTable" unique_id=1380530445]
+[node name="GrossTotalIncome" type="Label" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown/IncomeTable"]
 layout_mode = 2
 text = "Gross Total Income: "
 
-[node name="MonthlyGrossTotalIncome" type="Label" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown/IncomeTable" unique_id=382700665]
+[node name="MonthlyGrossTotalIncome" type="Label" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown/IncomeTable"]
 layout_mode = 2
 text = "-"
 horizontal_alignment = 2
 
-[node name="AnnualGrossTotalIncome" type="Label" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown/IncomeTable" unique_id=1148138823]
+[node name="AnnualGrossTotalIncome" type="Label" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown/IncomeTable"]
 layout_mode = 2
 text = "-"
 horizontal_alignment = 2
 
-[node name="NetTotalIncome" type="Label" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown/IncomeTable" unique_id=1493327347]
+[node name="NetTotalIncome" type="Label" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown/IncomeTable"]
 layout_mode = 2
 text = "Net Total Income: "
 
-[node name="MonthlyNetTotalIncome" type="Label" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown/IncomeTable" unique_id=1502779015]
+[node name="MonthlyNetTotalIncome" type="Label" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown/IncomeTable"]
 layout_mode = 2
 text = "-"
 horizontal_alignment = 2
 
-[node name="AnnualNetTotalIncome" type="Label" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown/IncomeTable" unique_id=888480054]
+[node name="AnnualNetTotalIncome" type="Label" parent="ScrollContainer/MarginContainer/Sections/IncomeBreakdown/IncomeTable"]
 layout_mode = 2
 text = "-"
 horizontal_alignment = 2
 
-[node name="BankAccounts" type="VBoxContainer" parent="ScrollContainer/MarginContainer/Sections" unique_id=1889729027]
+[node name="BankAccounts" type="VBoxContainer" parent="ScrollContainer/MarginContainer/Sections"]
 custom_minimum_size = Vector2(280, 304)
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_constants/separation = 12
 
-[node name="Title" type="Label" parent="ScrollContainer/MarginContainer/Sections/BankAccounts" unique_id=816114351]
+[node name="Title" type="Label" parent="ScrollContainer/MarginContainer/Sections/BankAccounts"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Bank Accounts"
 horizontal_alignment = 1
 
-[node name="BankTable" type="GridContainer" parent="ScrollContainer/MarginContainer/Sections/BankAccounts" unique_id=1190908017]
+[node name="BankTable" type="GridContainer" parent="ScrollContainer/MarginContainer/Sections/BankAccounts"]
 layout_mode = 2
 size_flags_vertical = 3
 columns = 2
 
-[node name="Type" type="Label" parent="ScrollContainer/MarginContainer/Sections/BankAccounts/BankTable" unique_id=254462637]
+[node name="Type" type="Label" parent="ScrollContainer/MarginContainer/Sections/BankAccounts/BankTable"]
 layout_mode = 2
 text = "Type"
 
-[node name="Nickname" type="Label" parent="ScrollContainer/MarginContainer/Sections/BankAccounts/BankTable" unique_id=1646466781]
+[node name="Nickname" type="Label" parent="ScrollContainer/MarginContainer/Sections/BankAccounts/BankTable"]
 layout_mode = 2
 text = "Nickname"
 
-[node name="PrimaryCheckingAccount" type="Label" parent="ScrollContainer/MarginContainer/Sections/BankAccounts/BankTable" unique_id=530859248]
+[node name="PrimaryCheckingAccount" type="Label" parent="ScrollContainer/MarginContainer/Sections/BankAccounts/BankTable"]
 layout_mode = 2
 text = "Primary Checking Account: "
 
-[node name="PrimaryCheckingAccountInput" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/BankAccounts/BankTable" unique_id=1281501475]
+[node name="PrimaryCheckingAccountInput" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/BankAccounts/BankTable"]
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 alignment = 2
 
-[node name="SecondaryCheckingAccount" type="Label" parent="ScrollContainer/MarginContainer/Sections/BankAccounts/BankTable" unique_id=1598218857]
+[node name="SecondaryCheckingAccount" type="Label" parent="ScrollContainer/MarginContainer/Sections/BankAccounts/BankTable"]
 layout_mode = 2
 text = "Secondary Checking Account: "
 
-[node name="SecondaryCheckingAccountInput" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/BankAccounts/BankTable" unique_id=741823526]
+[node name="SecondaryCheckingAccountInput" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/BankAccounts/BankTable"]
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 alignment = 2
 
-[node name="SavingsAccount1" type="Label" parent="ScrollContainer/MarginContainer/Sections/BankAccounts/BankTable" unique_id=1557231646]
+[node name="SavingsAccount1" type="Label" parent="ScrollContainer/MarginContainer/Sections/BankAccounts/BankTable"]
 layout_mode = 2
 text = "Savings Account #1: "
 
-[node name="SavingsAccountInput1" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/BankAccounts/BankTable" unique_id=1806615330]
+[node name="SavingsAccountInput1" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/BankAccounts/BankTable"]
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 alignment = 2
 
-[node name="SavingsAccount2" type="Label" parent="ScrollContainer/MarginContainer/Sections/BankAccounts/BankTable" unique_id=183813947]
+[node name="SavingsAccount2" type="Label" parent="ScrollContainer/MarginContainer/Sections/BankAccounts/BankTable"]
 layout_mode = 2
 text = "Savings Account #2: "
 
-[node name="SavingsAccountInput2" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/BankAccounts/BankTable" unique_id=995247310]
+[node name="SavingsAccountInput2" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/BankAccounts/BankTable"]
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 alignment = 2
 
-[node name="SavingsAccount3" type="Label" parent="ScrollContainer/MarginContainer/Sections/BankAccounts/BankTable" unique_id=492706411]
+[node name="SavingsAccount3" type="Label" parent="ScrollContainer/MarginContainer/Sections/BankAccounts/BankTable"]
 layout_mode = 2
 text = "Savings Account #3: "
 
-[node name="SavingsAccountInput3" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/BankAccounts/BankTable" unique_id=168415869]
+[node name="SavingsAccountInput3" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/BankAccounts/BankTable"]
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 alignment = 2
 
-[node name="SavingsAccount4" type="Label" parent="ScrollContainer/MarginContainer/Sections/BankAccounts/BankTable" unique_id=674615680]
+[node name="SavingsAccount4" type="Label" parent="ScrollContainer/MarginContainer/Sections/BankAccounts/BankTable"]
 layout_mode = 2
 text = "Savings Account #4:"
 
-[node name="SavingsAccountInput4" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/BankAccounts/BankTable" unique_id=49161613]
+[node name="SavingsAccountInput4" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/BankAccounts/BankTable"]
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 alignment = 2
 
-[node name="AssetNames" type="VBoxContainer" parent="ScrollContainer/MarginContainer/Sections" unique_id=1628502267]
+[node name="AssetNames" type="VBoxContainer" parent="ScrollContainer/MarginContainer/Sections"]
 custom_minimum_size = Vector2(280, 304)
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_constants/separation = 12
 
-[node name="Title" type="Label" parent="ScrollContainer/MarginContainer/Sections/AssetNames" unique_id=451608424]
+[node name="Title" type="Label" parent="ScrollContainer/MarginContainer/Sections/AssetNames"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Asset Names"
 horizontal_alignment = 1
 
-[node name="AssetTable" type="GridContainer" parent="ScrollContainer/MarginContainer/Sections/AssetNames" unique_id=2065912214]
+[node name="AssetTable" type="GridContainer" parent="ScrollContainer/MarginContainer/Sections/AssetNames"]
 layout_mode = 2
 size_flags_vertical = 3
 columns = 2
 
-[node name="Type" type="Label" parent="ScrollContainer/MarginContainer/Sections/AssetNames/AssetTable" unique_id=731943627]
+[node name="Type" type="Label" parent="ScrollContainer/MarginContainer/Sections/AssetNames/AssetTable"]
 layout_mode = 2
 text = "Type"
 
-[node name="Nickname" type="Label" parent="ScrollContainer/MarginContainer/Sections/AssetNames/AssetTable" unique_id=2026057673]
+[node name="Nickname" type="Label" parent="ScrollContainer/MarginContainer/Sections/AssetNames/AssetTable"]
 layout_mode = 2
 text = "Nickname"
 
-[node name="PreTaxRetirement" type="Label" parent="ScrollContainer/MarginContainer/Sections/AssetNames/AssetTable" unique_id=22663162]
+[node name="PreTaxRetirement" type="Label" parent="ScrollContainer/MarginContainer/Sections/AssetNames/AssetTable"]
 layout_mode = 2
 text = "Pre-Tax Retirement Acct: "
 
-[node name="PreTaxRetirementInput" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/AssetNames/AssetTable" unique_id=833788381]
+[node name="PreTaxRetirementInput" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/AssetNames/AssetTable"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 alignment = 2
 
-[node name="AfterTaxRetirement" type="Label" parent="ScrollContainer/MarginContainer/Sections/AssetNames/AssetTable" unique_id=297160076]
+[node name="AfterTaxRetirement" type="Label" parent="ScrollContainer/MarginContainer/Sections/AssetNames/AssetTable"]
 layout_mode = 2
 text = "Ater-Tax Retirement Acct: "
 
-[node name="AfterTaxRetirementInput" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/AssetNames/AssetTable" unique_id=2088787094]
+[node name="AfterTaxRetirementInput" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/AssetNames/AssetTable"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 alignment = 2
 
-[node name="OtherAsset1" type="Label" parent="ScrollContainer/MarginContainer/Sections/AssetNames/AssetTable" unique_id=392004203]
+[node name="OtherAsset1" type="Label" parent="ScrollContainer/MarginContainer/Sections/AssetNames/AssetTable"]
 layout_mode = 2
 text = "Other Asset #1: "
 
-[node name="OtherAssetInput1" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/AssetNames/AssetTable" unique_id=225123428]
+[node name="OtherAssetInput1" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/AssetNames/AssetTable"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 alignment = 2
 
-[node name="OtherAsset2" type="Label" parent="ScrollContainer/MarginContainer/Sections/AssetNames/AssetTable" unique_id=757916639]
+[node name="OtherAsset2" type="Label" parent="ScrollContainer/MarginContainer/Sections/AssetNames/AssetTable"]
 layout_mode = 2
 text = "Other Asset #2: "
 
-[node name="OtherAssetInput2" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/AssetNames/AssetTable" unique_id=742987639]
+[node name="OtherAssetInput2" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/AssetNames/AssetTable"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 alignment = 2
 
-[node name="OtherAsset3" type="Label" parent="ScrollContainer/MarginContainer/Sections/AssetNames/AssetTable" unique_id=1469759874]
+[node name="OtherAsset3" type="Label" parent="ScrollContainer/MarginContainer/Sections/AssetNames/AssetTable"]
 layout_mode = 2
 text = "Other Asset #3: "
 
-[node name="OtherAssetInput3" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/AssetNames/AssetTable" unique_id=133428045]
+[node name="OtherAssetInput3" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/AssetNames/AssetTable"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 alignment = 2
 
-[node name="OtherAsset4" type="Label" parent="ScrollContainer/MarginContainer/Sections/AssetNames/AssetTable" unique_id=2072995561]
+[node name="OtherAsset4" type="Label" parent="ScrollContainer/MarginContainer/Sections/AssetNames/AssetTable"]
 layout_mode = 2
 text = "Other Asset #4: "
 
-[node name="OtherAssetInput4" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/AssetNames/AssetTable" unique_id=2064253919]
+[node name="OtherAssetInput4" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/AssetNames/AssetTable"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 alignment = 2
 
-[node name="LiabilityNames" type="VBoxContainer" parent="ScrollContainer/MarginContainer/Sections" unique_id=1221641196]
+[node name="LiabilityNames" type="VBoxContainer" parent="ScrollContainer/MarginContainer/Sections"]
 custom_minimum_size = Vector2(280, 304)
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_constants/separation = 12
 
-[node name="Title" type="Label" parent="ScrollContainer/MarginContainer/Sections/LiabilityNames" unique_id=887730726]
+[node name="Title" type="Label" parent="ScrollContainer/MarginContainer/Sections/LiabilityNames"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Liability Names"
 horizontal_alignment = 1
 
-[node name="LiabilityTable" type="GridContainer" parent="ScrollContainer/MarginContainer/Sections/LiabilityNames" unique_id=227442367]
+[node name="LiabilityTable" type="GridContainer" parent="ScrollContainer/MarginContainer/Sections/LiabilityNames"]
 layout_mode = 2
 size_flags_vertical = 3
 columns = 2
 
-[node name="Type" type="Label" parent="ScrollContainer/MarginContainer/Sections/LiabilityNames/LiabilityTable" unique_id=73495134]
+[node name="Type" type="Label" parent="ScrollContainer/MarginContainer/Sections/LiabilityNames/LiabilityTable"]
 layout_mode = 2
 text = "Type"
 
-[node name="Nickname" type="Label" parent="ScrollContainer/MarginContainer/Sections/LiabilityNames/LiabilityTable" unique_id=1893206290]
+[node name="Nickname" type="Label" parent="ScrollContainer/MarginContainer/Sections/LiabilityNames/LiabilityTable"]
 layout_mode = 2
 text = "Nickname"
 
-[node name="RentMortgage" type="Label" parent="ScrollContainer/MarginContainer/Sections/LiabilityNames/LiabilityTable" unique_id=669119713]
+[node name="RentMortgage" type="Label" parent="ScrollContainer/MarginContainer/Sections/LiabilityNames/LiabilityTable"]
 layout_mode = 2
 text = "Rent/Mortgage"
 
-[node name="RentMortgageInput" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/LiabilityNames/LiabilityTable" unique_id=1651857533]
+[node name="RentMortgageInput" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/LiabilityNames/LiabilityTable"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 alignment = 2
 
-[node name="CarLoan" type="Label" parent="ScrollContainer/MarginContainer/Sections/LiabilityNames/LiabilityTable" unique_id=1240058458]
+[node name="CarLoan" type="Label" parent="ScrollContainer/MarginContainer/Sections/LiabilityNames/LiabilityTable"]
 layout_mode = 2
 text = "Car Loan(s)"
 
-[node name="CarLoanInput" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/LiabilityNames/LiabilityTable" unique_id=878134371]
+[node name="CarLoanInput" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/LiabilityNames/LiabilityTable"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 alignment = 2
 
-[node name="OtherMajorDebt" type="Label" parent="ScrollContainer/MarginContainer/Sections/LiabilityNames/LiabilityTable" unique_id=1849902508]
+[node name="OtherMajorDebt" type="Label" parent="ScrollContainer/MarginContainer/Sections/LiabilityNames/LiabilityTable"]
 layout_mode = 2
 text = "Other Major Debt: "
 
-[node name="OtherMajorDebtInput" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/LiabilityNames/LiabilityTable" unique_id=2106720077]
+[node name="OtherMajorDebtInput" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/LiabilityNames/LiabilityTable"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 alignment = 2
 
-[node name="CreditCard1" type="Label" parent="ScrollContainer/MarginContainer/Sections/LiabilityNames/LiabilityTable" unique_id=1874840188]
+[node name="CreditCard1" type="Label" parent="ScrollContainer/MarginContainer/Sections/LiabilityNames/LiabilityTable"]
 layout_mode = 2
 text = "Credit Card #1: "
 
-[node name="CreditCardInput1" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/LiabilityNames/LiabilityTable" unique_id=376264821]
+[node name="CreditCardInput1" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/LiabilityNames/LiabilityTable"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 alignment = 2
 
-[node name="CreditCard2" type="Label" parent="ScrollContainer/MarginContainer/Sections/LiabilityNames/LiabilityTable" unique_id=238647860]
+[node name="CreditCard2" type="Label" parent="ScrollContainer/MarginContainer/Sections/LiabilityNames/LiabilityTable"]
 layout_mode = 2
 text = "Credit Card #2: "
 
-[node name="CreditCardInput2" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/LiabilityNames/LiabilityTable" unique_id=623721588]
+[node name="CreditCardInput2" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/LiabilityNames/LiabilityTable"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 alignment = 2
 
-[node name="CreditCard3" type="Label" parent="ScrollContainer/MarginContainer/Sections/LiabilityNames/LiabilityTable" unique_id=1894713851]
+[node name="CreditCard3" type="Label" parent="ScrollContainer/MarginContainer/Sections/LiabilityNames/LiabilityTable"]
 layout_mode = 2
 text = "Credit Card #3:"
 
-[node name="CreditCardInput3" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/LiabilityNames/LiabilityTable" unique_id=2094434122]
+[node name="CreditCardInput3" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/LiabilityNames/LiabilityTable"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 alignment = 2
 
-[node name="FixedMonthlyCosts" type="VBoxContainer" parent="ScrollContainer/MarginContainer/Sections" unique_id=350704619]
+[node name="FixedMonthlyCosts" type="VBoxContainer" parent="ScrollContainer/MarginContainer/Sections"]
 custom_minimum_size = Vector2(280, 304)
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_constants/separation = 12
 
-[node name="Title" type="Label" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts" unique_id=1501182025]
+[node name="Title" type="Label" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Fixed Monthly Costs"
 horizontal_alignment = 1
 
-[node name="FixedCostTable" type="GridContainer" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts" unique_id=1973456992]
+[node name="FixedCostTable" type="GridContainer" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts"]
 layout_mode = 2
 size_flags_vertical = 3
 columns = 3
 
-[node name="BudgetCategoryHeader" type="Label" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable" unique_id=576700943]
+[node name="BudgetCategoryHeader" type="Label" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable"]
 custom_minimum_size = Vector2(280, 0)
 layout_mode = 2
 text = "Budget Category"
 
-[node name="AmountHeader" type="Label" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable" unique_id=1924507493]
+[node name="AmountHeader" type="Label" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "Amount"
 horizontal_alignment = 2
 
-[node name="PercentOfNetHeader" type="Label" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable" unique_id=1487443117]
+[node name="PercentOfNetHeader" type="Label" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "& of Net"
 horizontal_alignment = 2
 
-[node name="AfterTaxRetirement" type="Label" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable" unique_id=375442969]
+[node name="AfterTaxRetirement" type="Label" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable"]
 custom_minimum_size = Vector2(280, 0)
 layout_mode = 2
 text = "After Tax Retirement Contribution: "
 
-[node name="AfterTaxRetirementAmount" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable" unique_id=1254121547]
+[node name="AfterTaxRetirementAmount" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 placeholder_text = "$0.00"
 alignment = 2
 
-[node name="PercentOfNet" type="Label" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable" unique_id=974488525]
+[node name="PercentOfNet" type="Label" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "-"
 horizontal_alignment = 2
 
-[node name="BudgetCategory2" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable" unique_id=1802393897]
+[node name="BudgetCategory2" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable"]
 custom_minimum_size = Vector2(280, 0)
 layout_mode = 2
 placeholder_text = "Category #2"
 
-[node name="Amount2" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable" unique_id=1979910119]
+[node name="Amount2" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 placeholder_text = "$0.00"
 alignment = 2
 
-[node name="PercentOfNet2" type="Label" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable" unique_id=1216454364]
+[node name="PercentOfNet2" type="Label" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "-"
 horizontal_alignment = 2
 
-[node name="BudgetCategory3" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable" unique_id=106452626]
+[node name="BudgetCategory3" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable"]
 custom_minimum_size = Vector2(280, 0)
 layout_mode = 2
 placeholder_text = "Category #3"
 
-[node name="Amount3" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable" unique_id=87095583]
+[node name="Amount3" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 placeholder_text = "$0.00"
 alignment = 2
 
-[node name="PercentOfNet3" type="Label" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable" unique_id=1105661127]
+[node name="PercentOfNet3" type="Label" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "-"
 horizontal_alignment = 2
 
-[node name="BudgetCategory4" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable" unique_id=1608501872]
+[node name="BudgetCategory4" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable"]
 custom_minimum_size = Vector2(280, 0)
 layout_mode = 2
 placeholder_text = "Category #4"
 
-[node name="Amount4" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable" unique_id=1869169884]
+[node name="Amount4" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 placeholder_text = "$0.00"
 alignment = 2
 
-[node name="PercentOfNet4" type="Label" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable" unique_id=512260173]
+[node name="PercentOfNet4" type="Label" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "-"
 horizontal_alignment = 2
 
-[node name="BudgetCategory5" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable" unique_id=1383889413]
+[node name="BudgetCategory5" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable"]
 custom_minimum_size = Vector2(280, 0)
 layout_mode = 2
 placeholder_text = "Category #5"
 
-[node name="Amount5" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable" unique_id=1745024313]
+[node name="Amount5" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 placeholder_text = "$0.00"
 alignment = 2
 
-[node name="PercentOfNet5" type="Label" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable" unique_id=173258051]
+[node name="PercentOfNet5" type="Label" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "-"
 horizontal_alignment = 2
 
-[node name="BudgetCategory6" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable" unique_id=550337065]
+[node name="BudgetCategory6" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable"]
 custom_minimum_size = Vector2(280, 0)
 layout_mode = 2
 placeholder_text = "Category #6"
 
-[node name="Amount6" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable" unique_id=1332919206]
+[node name="Amount6" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 placeholder_text = "$0.00"
 alignment = 2
 
-[node name="PercentOfNet6" type="Label" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable" unique_id=767737198]
+[node name="PercentOfNet6" type="Label" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "-"
 horizontal_alignment = 2
 
-[node name="BudgetCategory7" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable" unique_id=2093013254]
+[node name="BudgetCategory7" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable"]
 custom_minimum_size = Vector2(280, 0)
 layout_mode = 2
 placeholder_text = "Category #7"
 
-[node name="Amount7" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable" unique_id=264235855]
+[node name="Amount7" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 placeholder_text = "$0.00"
 alignment = 2
 
-[node name="PercentOfNet7" type="Label" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable" unique_id=916803266]
+[node name="PercentOfNet7" type="Label" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "-"
 horizontal_alignment = 2
 
-[node name="BudgetCategory8" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable" unique_id=1318539792]
+[node name="BudgetCategory8" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable"]
 custom_minimum_size = Vector2(280, 0)
 layout_mode = 2
 placeholder_text = "Category #8"
 
-[node name="Amount8" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable" unique_id=1236835978]
+[node name="Amount8" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 placeholder_text = "$0.00"
 alignment = 2
 
-[node name="PercentOfNet8" type="Label" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable" unique_id=2069463478]
+[node name="PercentOfNet8" type="Label" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "-"
 horizontal_alignment = 2
 
-[node name="BudgetCategory9" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable" unique_id=1753078219]
+[node name="BudgetCategory9" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable"]
 custom_minimum_size = Vector2(280, 0)
 layout_mode = 2
 placeholder_text = "Category #9"
 
-[node name="Amount9" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable" unique_id=515015598]
+[node name="Amount9" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 placeholder_text = "$0.00"
 alignment = 2
 
-[node name="PercentOfNet9" type="Label" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable" unique_id=1806928420]
+[node name="PercentOfNet9" type="Label" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/FixedCostTable"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "-"
 horizontal_alignment = 2
 
-[node name="TotalRow" type="HBoxContainer" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts" unique_id=1145564925]
+[node name="TotalRow" type="HBoxContainer" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts"]
 layout_mode = 2
 
-[node name="TotalTitle" type="Label" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/TotalRow" unique_id=462460934]
+[node name="TotalTitle" type="Label" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/TotalRow"]
 custom_minimum_size = Vector2(280, 0)
 layout_mode = 2
 text = "Total for Monthly Budget "
 
-[node name="TotalAmount" type="Label" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/TotalRow" unique_id=91983505]
+[node name="TotalAmount" type="Label" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/TotalRow"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "-"
 horizontal_alignment = 2
 
-[node name="TotalPercent" type="Label" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/TotalRow" unique_id=17860556]
+[node name="TotalPercent" type="Label" parent="ScrollContainer/MarginContainer/Sections/FixedMonthlyCosts/TotalRow"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "-"
 horizontal_alignment = 2
 
-[node name="AnnualBudget" type="VBoxContainer" parent="ScrollContainer/MarginContainer/Sections" unique_id=817003611]
+[node name="AnnualBudget" type="VBoxContainer" parent="ScrollContainer/MarginContainer/Sections"]
 custom_minimum_size = Vector2(280, 304)
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_constants/separation = 12
 
-[node name="Title" type="Label" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget" unique_id=1985540701]
+[node name="Title" type="Label" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Annual Budget"
 horizontal_alignment = 1
 
-[node name="AnnualBudgetTable" type="GridContainer" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget" unique_id=1156823423]
+[node name="AnnualBudgetTable" type="GridContainer" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget"]
 layout_mode = 2
 size_flags_vertical = 3
 columns = 3
 
-[node name="BudgetCategoryHeader" type="Label" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable" unique_id=1812043584]
+[node name="BudgetCategoryHeader" type="Label" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(280, 0)
 layout_mode = 2
 text = "Budget Category"
 
-[node name="AmountHeader" type="Label" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable" unique_id=161094793]
+[node name="AmountHeader" type="Label" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "Amount"
 horizontal_alignment = 2
 
-[node name="PercentOfNetHeader" type="Label" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable" unique_id=1684891646]
+[node name="PercentOfNetHeader" type="Label" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "& of Net"
 horizontal_alignment = 2
 
-[node name="BudgetCategory1" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable" unique_id=1645976609]
+[node name="BudgetCategory1" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(280, 0)
 layout_mode = 2
 placeholder_text = "Category #1"
 
-[node name="Amount1" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable" unique_id=538001714]
+[node name="Amount1" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 placeholder_text = "$0.00"
 alignment = 2
 
-[node name="PercentOfNet1" type="Label" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable" unique_id=511175808]
+[node name="PercentOfNet1" type="Label" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "-"
 horizontal_alignment = 2
 
-[node name="BudgetCategory2" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable" unique_id=1833282590]
+[node name="BudgetCategory2" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(280, 0)
 layout_mode = 2
 placeholder_text = "Category #2"
 
-[node name="Amount2" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable" unique_id=285779049]
+[node name="Amount2" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 placeholder_text = "$0.00"
 alignment = 2
 
-[node name="PercentOfNet2" type="Label" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable" unique_id=1618190605]
+[node name="PercentOfNet2" type="Label" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "-"
 horizontal_alignment = 2
 
-[node name="BudgetCategory3" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable" unique_id=1389007448]
+[node name="BudgetCategory3" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(280, 0)
 layout_mode = 2
 placeholder_text = "Category #3"
 
-[node name="Amount3" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable" unique_id=1970555534]
+[node name="Amount3" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 placeholder_text = "$0.00"
 alignment = 2
 
-[node name="PercentOfNet3" type="Label" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable" unique_id=894688093]
+[node name="PercentOfNet3" type="Label" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "-"
 horizontal_alignment = 2
 
-[node name="BudgetCategory4" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable" unique_id=2064775523]
+[node name="BudgetCategory4" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(280, 0)
 layout_mode = 2
 placeholder_text = "Category #4"
 
-[node name="Amount4" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable" unique_id=1125847862]
+[node name="Amount4" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 placeholder_text = "$0.00"
 alignment = 2
 
-[node name="PercentOfNet4" type="Label" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable" unique_id=1211115400]
+[node name="PercentOfNet4" type="Label" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "-"
 horizontal_alignment = 2
 
-[node name="BudgetCategory5" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable" unique_id=243930762]
+[node name="BudgetCategory5" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(280, 0)
 layout_mode = 2
 placeholder_text = "Category #5"
 
-[node name="Amount5" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable" unique_id=1299877740]
+[node name="Amount5" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 placeholder_text = "$0.00"
 alignment = 2
 
-[node name="PercentOfNet5" type="Label" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable" unique_id=1118818913]
+[node name="PercentOfNet5" type="Label" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "-"
 horizontal_alignment = 2
 
-[node name="BudgetCategory6" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable" unique_id=729568031]
+[node name="BudgetCategory6" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(280, 0)
 layout_mode = 2
 placeholder_text = "Category #6"
 
-[node name="Amount6" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable" unique_id=900710234]
+[node name="Amount6" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 placeholder_text = "$0.00"
 alignment = 2
 
-[node name="PercentOfNet6" type="Label" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable" unique_id=1330096298]
+[node name="PercentOfNet6" type="Label" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "-"
 horizontal_alignment = 2
 
-[node name="BudgetCategory7" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable" unique_id=1451187402]
+[node name="BudgetCategory7" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(280, 0)
 layout_mode = 2
 placeholder_text = "Category #7"
 
-[node name="Amount7" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable" unique_id=1121131996]
+[node name="Amount7" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 placeholder_text = "$0.00"
 alignment = 2
 
-[node name="PercentOfNet7" type="Label" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable" unique_id=384979583]
+[node name="PercentOfNet7" type="Label" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "-"
 horizontal_alignment = 2
 
-[node name="BudgetCategory8" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable" unique_id=1508529915]
+[node name="BudgetCategory8" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(280, 0)
 layout_mode = 2
 placeholder_text = "Category #8"
 
-[node name="Amount8" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable" unique_id=605448763]
+[node name="Amount8" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 placeholder_text = "$0.00"
 alignment = 2
 
-[node name="PercentOfNet8" type="Label" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable" unique_id=1965766527]
+[node name="PercentOfNet8" type="Label" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "-"
 horizontal_alignment = 2
 
-[node name="BudgetCategory9" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable" unique_id=1164087306]
+[node name="BudgetCategory9" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(280, 0)
 layout_mode = 2
 placeholder_text = "Category #9"
 
-[node name="Amount9" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable" unique_id=807880688]
+[node name="Amount9" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 placeholder_text = "$0.00"
 alignment = 2
 
-[node name="PercentOfNet9" type="Label" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable" unique_id=1116958006]
+[node name="PercentOfNet9" type="Label" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "-"
 horizontal_alignment = 2
 
-[node name="TotalRow" type="HBoxContainer" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget" unique_id=376400341]
+[node name="TotalRow" type="HBoxContainer" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget"]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 
-[node name="TotalTitle" type="Label" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/TotalRow" unique_id=1989928858]
+[node name="TotalTitle" type="Label" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/TotalRow"]
 custom_minimum_size = Vector2(280, 0)
 layout_mode = 2
 text = "Total "
 
-[node name="TotalAmount" type="Label" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/TotalRow" unique_id=805213214]
+[node name="TotalAmount" type="Label" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/TotalRow"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "-"
 horizontal_alignment = 2
 
-[node name="TotalPercent" type="Label" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/TotalRow" unique_id=2089002974]
+[node name="TotalPercent" type="Label" parent="ScrollContainer/MarginContainer/Sections/AnnualBudget/TotalRow"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "-"
 horizontal_alignment = 2
 
-[node name="MonthlyBudget" type="VBoxContainer" parent="ScrollContainer/MarginContainer/Sections" unique_id=1391634404]
+[node name="MonthlyBudget" type="VBoxContainer" parent="ScrollContainer/MarginContainer/Sections"]
 custom_minimum_size = Vector2(280, 304)
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_constants/separation = 12
 
-[node name="Title" type="Label" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget" unique_id=2094204505]
+[node name="Title" type="Label" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Monthly Budget"
 horizontal_alignment = 1
 
-[node name="AnnualBudgetTable" type="GridContainer" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget" unique_id=4778570]
+[node name="AnnualBudgetTable" type="GridContainer" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget"]
 layout_mode = 2
 size_flags_vertical = 3
 columns = 3
 
-[node name="BudgetCategoryHeader" type="Label" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable" unique_id=1891244202]
+[node name="BudgetCategoryHeader" type="Label" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(280, 0)
 layout_mode = 2
 text = "Budget Category"
 
-[node name="AmountHeader" type="Label" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable" unique_id=1127599749]
+[node name="AmountHeader" type="Label" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "Amount"
 horizontal_alignment = 2
 
-[node name="PercentOfNetHeader" type="Label" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable" unique_id=193695404]
+[node name="PercentOfNetHeader" type="Label" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "& of Net"
 horizontal_alignment = 2
 
-[node name="BudgetCategory1" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable" unique_id=1364026864]
+[node name="BudgetCategory1" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(280, 0)
 layout_mode = 2
 placeholder_text = "Category #1"
 
-[node name="Amount1" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable" unique_id=1914917497]
+[node name="Amount1" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 placeholder_text = "$0.00"
 alignment = 2
 
-[node name="PercentOfNet1" type="Label" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable" unique_id=473387381]
+[node name="PercentOfNet1" type="Label" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "-"
 horizontal_alignment = 2
 
-[node name="BudgetCategory2" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable" unique_id=1061676758]
+[node name="BudgetCategory2" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(280, 0)
 layout_mode = 2
 placeholder_text = "Category #2"
 
-[node name="Amount2" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable" unique_id=2107836904]
+[node name="Amount2" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 placeholder_text = "$0.00"
 alignment = 2
 
-[node name="PercentOfNet2" type="Label" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable" unique_id=1359106894]
+[node name="PercentOfNet2" type="Label" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "-"
 horizontal_alignment = 2
 
-[node name="BudgetCategory3" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable" unique_id=1235866961]
+[node name="BudgetCategory3" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(280, 0)
 layout_mode = 2
 placeholder_text = "Category #3"
 
-[node name="Amount3" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable" unique_id=333326677]
+[node name="Amount3" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 placeholder_text = "$0.00"
 alignment = 2
 
-[node name="PercentOfNet3" type="Label" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable" unique_id=1914756701]
+[node name="PercentOfNet3" type="Label" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "-"
 horizontal_alignment = 2
 
-[node name="BudgetCategory4" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable" unique_id=1659511374]
+[node name="BudgetCategory4" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(280, 0)
 layout_mode = 2
 placeholder_text = "Category #4"
 
-[node name="Amount4" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable" unique_id=111583445]
+[node name="Amount4" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 placeholder_text = "$0.00"
 alignment = 2
 
-[node name="PercentOfNet4" type="Label" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable" unique_id=298229910]
+[node name="PercentOfNet4" type="Label" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "-"
 horizontal_alignment = 2
 
-[node name="BudgetCategory5" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable" unique_id=97845013]
+[node name="BudgetCategory5" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(280, 0)
 layout_mode = 2
 placeholder_text = "Category #5"
 
-[node name="Amount5" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable" unique_id=1270489851]
+[node name="Amount5" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 placeholder_text = "$0.00"
 alignment = 2
 
-[node name="PercentOfNet5" type="Label" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable" unique_id=509815688]
+[node name="PercentOfNet5" type="Label" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "-"
 horizontal_alignment = 2
 
-[node name="BudgetCategory6" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable" unique_id=441800093]
+[node name="BudgetCategory6" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(280, 0)
 layout_mode = 2
 placeholder_text = "Category #6"
 
-[node name="Amount6" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable" unique_id=423368069]
+[node name="Amount6" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 placeholder_text = "$0.00"
 alignment = 2
 
-[node name="PercentOfNet6" type="Label" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable" unique_id=248118787]
+[node name="PercentOfNet6" type="Label" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "-"
 horizontal_alignment = 2
 
-[node name="BudgetCategory7" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable" unique_id=753834828]
+[node name="BudgetCategory7" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(280, 0)
 layout_mode = 2
 placeholder_text = "Category #7"
 
-[node name="Amount7" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable" unique_id=426583281]
+[node name="Amount7" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 placeholder_text = "$0.00"
 alignment = 2
 
-[node name="PercentOfNet7" type="Label" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable" unique_id=1646376541]
+[node name="PercentOfNet7" type="Label" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "-"
 horizontal_alignment = 2
 
-[node name="BudgetCategory8" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable" unique_id=181260791]
+[node name="BudgetCategory8" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(280, 0)
 layout_mode = 2
 placeholder_text = "Category #8"
 
-[node name="Amount8" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable" unique_id=172081013]
+[node name="Amount8" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 placeholder_text = "$0.00"
 alignment = 2
 
-[node name="PercentOfNet8" type="Label" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable" unique_id=1345826186]
+[node name="PercentOfNet8" type="Label" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "-"
 horizontal_alignment = 2
 
-[node name="BudgetCategory9" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable" unique_id=1072541792]
+[node name="BudgetCategory9" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(280, 0)
 layout_mode = 2
 placeholder_text = "Category #9"
 
-[node name="Amount9" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable" unique_id=1331164867]
+[node name="Amount9" type="LineEdit" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 placeholder_text = "$0.00"
 alignment = 2
 
-[node name="PercentOfNet9" type="Label" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable" unique_id=800374724]
+[node name="PercentOfNet9" type="Label" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/AnnualBudgetTable"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "-"
 horizontal_alignment = 2
 
-[node name="TotalRow" type="HBoxContainer" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget" unique_id=1300513819]
+[node name="TotalRow" type="HBoxContainer" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget"]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 
-[node name="TotalTitle" type="Label" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/TotalRow" unique_id=390409015]
+[node name="TotalTitle" type="Label" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/TotalRow"]
 custom_minimum_size = Vector2(280, 0)
 layout_mode = 2
 text = "Total "
 
-[node name="TotalAmount" type="Label" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/TotalRow" unique_id=430789315]
+[node name="TotalAmount" type="Label" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/TotalRow"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "-"
 horizontal_alignment = 2
 
-[node name="TotalPercent" type="Label" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/TotalRow" unique_id=98105918]
+[node name="TotalPercent" type="Label" parent="ScrollContainer/MarginContainer/Sections/MonthlyBudget/TotalRow"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "-"
 horizontal_alignment = 2
 
-[node name="NotesSection" type="VBoxContainer" parent="ScrollContainer/MarginContainer/Sections" unique_id=1898877174]
+[node name="NotesSection" type="VBoxContainer" parent="ScrollContainer/MarginContainer/Sections"]
 custom_minimum_size = Vector2(280, 304)
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_constants/separation = 12
 
-[node name="Title" type="Label" parent="ScrollContainer/MarginContainer/Sections/NotesSection" unique_id=1558455135]
+[node name="Title" type="Label" parent="ScrollContainer/MarginContainer/Sections/NotesSection"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Notes Section"
 horizontal_alignment = 1
 
-[node name="Notes" type="TextEdit" parent="ScrollContainer/MarginContainer/Sections/NotesSection" unique_id=1885476312]
+[node name="Notes" type="TextEdit" parent="ScrollContainer/MarginContainer/Sections/NotesSection"]
 custom_minimum_size = Vector2(0, 365)
 layout_mode = 2
 placeholder_text = "A place to add any extra notes or things to remember."
